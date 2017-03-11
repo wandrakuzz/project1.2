@@ -51,11 +51,17 @@
             <td>No Telefon</td>
             <td>{{ $profile->no_tel }}</td>
           </tr>
+          <tr>
+            <td>Profile Picture</td>
+            <td>{{ $profile->picture }}</td>
+          </tr>
           @endforeach
         </tbody>
       </table>
-      <a href="profileedit.html" class="btn btn-success">Kemaskini Maklumat Diri</a>
+      @if( $profile->user_id == Auth::user()->id)
+      <a href="{{ action ('ProfileCOntroller@edit',   $profile->user_id) }}" class="btn btn-success">Kemaskini Maklumat Diri</a>
       <a href="student.html" class="btn btn-success">Tukar Katalaluan</a>
+      @endif
     </div>
   </div>
 </div>

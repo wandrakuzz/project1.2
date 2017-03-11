@@ -14,29 +14,33 @@
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
 
-                            <form class="form-horizontal" action="{{ action('SuggestController@store') }}" method="POST">
+                            <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">>
 
                               {{ csrf_field() }}
                                 <div class="form-group"><label class="col-sm-2 control-label">Nama Pelajar:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="activity_name" placeholder="Aktiviti"></div>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" name="name" placeholder="Aktiviti" value="{{ $profile->user->name }}"></input>
+                                    </div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Email:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="activity_date" placeholder="" format="dd/mm/yy"></div>
+                                    <div class="col-sm-10"><input type="text" class="form-control" name="email" placeholder="" value="{{ $profile->user->email }}"></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">No Matric:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="activity_date" placeholder="" format="dd/mm/yy"></div>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" name="matric_no" placeholder="" value="{{ $profile->user->matric_no }}"></input>
+                                    </div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Gender:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="activity_date" placeholder="" format="dd/mm/yy"></div>
+                                    <div class="col-sm-10"><option value="gender" name="gender" value="{{ $profile->gender }}"></option></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Course:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="activity_date" placeholder="" format="dd/mm/yy"></div>
+                                    <div class="col-sm-10"><input type="text" class="form-control" name="kursus" placeholder="" value="{{ $profile->kursus }}"></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">SIG:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="activity_date" placeholder="" format="dd/mm/yy"></div>
+                                    <div class="col-sm-10"><input type="text" class="form-control" name="sig" placeholder="" value="{{ $profile->sig }}"></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">No Tel:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="activity_date" placeholder="" format="dd/mm/yy"></div>
+                                    <div class="col-sm-10"><input type="text" class="form-control" name="no_tel" placeholder="" value="{{ $profile->no_tel }}"></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2 control-label"></label>
