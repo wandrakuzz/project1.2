@@ -76,20 +76,22 @@ class ProfileController extends Controller
     {
         //
         // $this->validate($request, ['post_content' => 'required',]);
-        // $profile = Profile::findOrFail($id);
-        // $profile->name = $request->name;
-        // $profile->email = $request->email;
-        // $profile->matric_no = $request->matric_no;
-        // $profile->gender = $request->gender;
-        // $profile->kursus = $request->kursus;
-        // $profile->sig = $request->sig;
-        // $profile->no_tel = $request->no_tel;
-        // 
-        // $profile->save();        
-        // return redirect()->action('PostsController@index')->withMessage('Post has been successfully updated');
+        $profile = Profile::findOrFail($id);
 
-        $profile = Profile::findOrFail($id);
-        $profile->update($request->all());
+          $profile->name = $request->name;
+          $profile->email = $request->email;
+          $profile->matric_no = $request->matric_no;
+          $profile->gender = $request->gender,;
+          $profile->kursus = $request->kursus;
+          $profile->sig = $request->sig;
+          $profile->no_tel = $request->no_tel;
+          $profile->picture = $request->picture;
+
+        $profile->save();        
+        return redirect()->action('PostsController@index')->withMessage('Post has been successfully updated');
+
+        // $profile = Profile::findOrFail($id);
+        // $profile->update($request->all());
     }
 
     /**

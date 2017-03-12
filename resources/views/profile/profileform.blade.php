@@ -14,12 +14,15 @@
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
 
-                            <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">>
+                            <form class="form-horizontal" action="{{ action ('ProfileController@update' , $profile->id)}}" method="POST" enctype="multipart/form-data">>
 
                               {{ csrf_field() }}
+                              {{ method_field('PATCH') }}
+
+
                                 <div class="form-group"><label class="col-sm-2 control-label">Nama Pelajar:</label>
                                     <div class="col-sm-10">
-                                      <input type="text" class="form-control" name="name" placeholder="Aktiviti" value="{{ $profile->user->name }}"></input>
+                                      <input type="text" class="form-control" name="name" placeholder="Aktiviti" value="{{ old('name', $profile->user->name) }}"></input>
                                     </div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Email:</label>
@@ -41,6 +44,9 @@
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">No Tel:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" name="no_tel" placeholder="" value="{{ $profile->no_tel }}"></div>
+                                </div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Picture:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" name="no_tel" placeholder="" value="{{ $profile->picture }}"></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2 control-label"></label>

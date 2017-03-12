@@ -21,5 +21,4 @@ Route::get('/home', 'HomeController@index');
 Route::resource('/suggest', 'SuggestController');
 Route::resource('/suggestview', 'SuggestController');
 Route::resource('/verify', 'VerifyController');
-Route::resource('/profile', 'ProfileCOntroller');
-Route::resource('/profileform', 'ProfileCOntroller');
+Route::resource('/profile', 'ProfileController');

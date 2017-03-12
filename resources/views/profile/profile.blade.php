@@ -59,7 +59,7 @@
         </tbody>
       </table>
       @if( $profile->user_id == Auth::user()->id)
-      <a href="{{ action ('ProfileCOntroller@edit',   $profile->user_id) }}" class="btn btn-success">Kemaskini Maklumat Diri</a>
+      <a href="{{ action ('ProfileController@edit',   $profile->user_id) }}" class="btn btn-success">Kemaskini Maklumat Diri</a>
       <a href="student.html" class="btn btn-success">Tukar Katalaluan</a>
       @endif
     </div>
