@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profile;
+use App\User;
 use Auth;
 
 class ProfileController extends Controller
@@ -76,19 +77,26 @@ class ProfileController extends Controller
     {
         //
         // $this->validate($request, ['post_content' => 'required',]);
-        $profile = Profile::findOrFail($id);
 
-          $profile->name = $request->name;
-          $profile->email = $request->email;
-          $profile->matric_no = $request->matric_no;
-          $profile->gender = $request->gender,;
+        dd(User::first());
+        $user = User::findOrFail($id);
+        $profile = Profile::where('user_id', $id)->first();
+
+          $user->name = $request->name;
+          $user->email = $request->email;
+          $user->matric_no = $request->matric_no;
+
+
+          $profile->gender = $request->gender;
           $profile->kursus = $request->kursus;
           $profile->sig = $request->sig;
           $profile->no_tel = $request->no_tel;
           $profile->picture = $request->picture;
 
-        $profile->save();        
-        return redirect()->action('PostsController@index')->withMessage('Post has been successfully updated');
+          $user->save();
+          $profile->save();
+                  
+        return redirect()->action('ProfileController@index')->withMessage('Post has been successfully updated');
 
         // $profile = Profile::findOrFail($id);
         // $profile->update($request->all());
