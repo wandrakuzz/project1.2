@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('navi_template.head')
+
 
 @section('content')
 
@@ -34,7 +35,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Gender:</label>
-                                    <div class="col-sm-10"><option value="gender" name="gender" value="{{ $profile->gender }}"></option></div>
+                                    <div class="col-sm-10"></div>&nbsp &nbsp
+                                    <label class="radio-inline">
+                                      <input type="radio" name="gender" value="{{ $profile->gender }}"> Male
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="gender" value="{{ $profile->gender }}"> Female
+                                    </label>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Course:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" name="kursus" placeholder="" value="{{ $profile->kursus }}"></div>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Verify;
+use App\Profile;
+use App\User;
+use Auth;
 
 class VerifyController extends Controller
 {
@@ -14,7 +17,8 @@ class VerifyController extends Controller
    */
   public function index()
   {
-      return view('Suggest.verify');
+      $profile = Profile::where('user_id',Auth::user()->id)->get();
+      return view('Suggest.verify' , compact('profile'));
   }
 
   /**
@@ -40,7 +44,7 @@ class VerifyController extends Controller
       'activity_name' => 'required',
       'activity_date' => 'required',
       'activity_type' => 'required',
-      'activity_report' => 'required|mimes:docx' ,
+      'activity_report' => 'required|mimes:docx,pdf,rar' ,
     ]);
 
       // dd($request->all());

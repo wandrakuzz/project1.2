@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('navi_template.head')
 
 @section('content')
-<div class="row">
+
     <div class="col-lg-12">
         <div class="tabs-container">
                 <ul class="nav nav-tabs">
@@ -20,8 +20,17 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">Nama Aktiviti:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" name="activity_name" placeholder="Aktiviti"></div>
                                 </div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Tarikh:</label>
-                                    <div class="col-sm-10"><input type="date" class="form-control" name="activity_date" placeholder="" format="dd/mm/yy"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Tarikh Mula:</label>
+                                    <div class="col-sm-10"><input type="date" class="form-control" name="activity_date_start" placeholder="" format="dd/mm/yy"></div>
+                                </div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Tarikh Akhir:</label>
+                                    <div class="col-sm-10"><input type="date" class="form-control" name="activity_date_end" placeholder="" format="dd/mm/yy"></div>
+                                </div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Masa Mula:</label>
+                                    <div class="col-sm-10"><input type="time" class="form-control" name="activity_time_start" placeholder="" format="dd/mm/yy"></div>
+                                </div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Masa Akhir:</label>
+                                    <div class="col-sm-10"><input type="time" class="form-control" name="activity_time_end" placeholder="" format="dd/mm/yy"></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Ringkasan Aktiviti:</label>
                                     <div class="col-sm-10">

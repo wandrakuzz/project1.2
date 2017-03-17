@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('navi_template.head')
 
 @section('content')
 <div class="row">

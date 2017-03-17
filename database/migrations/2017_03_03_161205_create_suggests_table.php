@@ -16,7 +16,10 @@ class CreateSuggestsTable extends Migration
         Schema::create('suggests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('activity_name');
-            $table->date('activity_date');
+            $table->date('activity_date_start');
+            $table->date('activity_date_end');
+            $table->time('activity_time_start');
+            $table->time('activity_time_end');
             $table->string('activity_summary');
             $table->timestamps();
         });

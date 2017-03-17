@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Suggest;
+use App\Profile;
+use Auth;
 
 class SuggestController extends Controller
 {
@@ -14,7 +16,8 @@ class SuggestController extends Controller
      */
     public function index()
     {
-        return view('Suggest.suggest');
+        $profiles = Profile::where('user_id',Auth::user()->id)->get();
+        return view('Suggest.suggest',compact('profiles'));
     }
 
     /**
@@ -38,7 +41,10 @@ class SuggestController extends Controller
 
         $suggest = new Suggest;
         $suggest->activity_name = $request->activity_name;
-        $suggest->activity_date = $request->activity_date;
+        $suggest->activity_date_start = $request->activity_date_start;
+        $suggest->activity_date_end = $request->activity_date_end;
+        $suggest->activity_time_start = $request->activity_time_start;
+        $suggest->activity_time_end = $request->activity_time_end;
         $suggest->activity_summary = $request->activity_summary;
         // $post->user_id = Auth::user()->id;
         $suggest->save();

@@ -78,7 +78,7 @@ class ProfileController extends Controller
         //
         // $this->validate($request, ['post_content' => 'required',]);
 
-        dd(User::first());
+        // dd(User::first());
         $user = User::findOrFail($id);
         $profile = Profile::where('user_id', $id)->first();
 
