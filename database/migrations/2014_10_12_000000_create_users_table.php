@@ -17,8 +17,10 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('matric_no')->unique();
+            $table->string('sig');
             $table->string('email')->unique();
             $table->string('password');
+            $table->enum('user_group', ['admin','penasihat','pelajar'])->default('pelajar');
             $table->rememberToken();
             $table->timestamps();
         });

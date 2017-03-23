@@ -18,7 +18,6 @@ class CreateProfilesTable extends Migration
             $table->unsignedInteger('user_id')->index();
             $table->string('gender')->nullable();
             $table->string('kursus')->nullable();
-            $table->string('sig')->nullable();
             $table->string('no_tel')->nullable();
             $table->string('picture')->nullable();
             $table->timestamps();

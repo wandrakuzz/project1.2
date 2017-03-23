@@ -37,23 +37,23 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">Gender:</label>
                                     <div class="col-sm-10"></div>&nbsp &nbsp
                                     <label class="radio-inline">
-                                      <input type="radio" name="gender" value="{{ $profile->gender }}"> Male
+                                      <input type="radio" name="gender" id="inlineRadio1" value="{{ $profile->gender }}"> 1
                                     </label>
                                     <label class="radio-inline">
-                                      <input type="radio" name="gender" value="{{ $profile->gender }}"> Female
+                                      <input type="radio" name="gender" id="inlineRadio2" value="{{ $profile->gender }}"> 2
                                     </label>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Course:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" name="kursus" placeholder="" value="{{ $profile->kursus }}"></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">SIG:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="sig" placeholder="" value="{{ $profile->sig }}"></div>
+                                    <div class="col-sm-10"><input type="text" class="form-control" name="sig" placeholder="" value="{{ $profile->user->sig }}"></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">No Tel:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" name="no_tel" placeholder="" value="{{ $profile->no_tel }}"></div>
                                 </div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Picture:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="no_tel" placeholder="" value="{{ $profile->picture }}"></div>
+                                    <div class="col-sm-10"><input type="file" class="form-control" name="picture" placeholder="" value="{{ $profile->picture }}"></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2 control-label"></label>

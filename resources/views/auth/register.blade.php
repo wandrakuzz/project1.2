@@ -38,6 +38,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('sig') ? ' has-error' : '' }}">
+                            <label for="sig" class="col-md-4 control-label">SIG</label>
+
+                            <div class="col-md-6">
+                                <input id="sig" type="text" class="form-control" name="sig" value="{{ old('sig') }}" required autofocus>
+
+                                @if ($errors->has('sig'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('sig') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

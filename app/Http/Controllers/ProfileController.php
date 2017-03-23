@@ -78,20 +78,22 @@ class ProfileController extends Controller
         //
         // $this->validate($request, ['post_content' => 'required',]);
 
-        // dd(User::first());
+        //  dd($request->all());
         $user = User::findOrFail($id);
         $profile = Profile::where('user_id', $id)->first();
 
           $user->name = $request->name;
           $user->email = $request->email;
+          $user->sig = $request->sig;
           $user->matric_no = $request->matric_no;
 
 
           $profile->gender = $request->gender;
           $profile->kursus = $request->kursus;
-          $profile->sig = $request->sig;
           $profile->no_tel = $request->no_tel;
-          $profile->picture = $request->picture;
+          $profile->picture = $request->hasFile('picture')
+              ? $profile->picture->store('public') : '';
+          // $profile->picture = $request->picture;
 
           $user->save();
           $profile->save();
