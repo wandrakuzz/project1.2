@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','sig','matric_no','user_group'
+        'name', 'email', 'password','kelab_id','matric_no','user_group'
     ];
 
     /**
@@ -30,5 +30,15 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasOne(Profile::class, 'user_id');
+    }
+
+    public function kelab()
+    {
+        return $this->belongsTo(Kelab::class, 'kelab_id');
+    }
+
+    public function suggest()
+    {
+      return $this->hasMany(Suggest::class);
     }
 }

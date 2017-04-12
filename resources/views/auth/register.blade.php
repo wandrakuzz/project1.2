@@ -28,7 +28,7 @@
                             <label for="matric_no" class="col-md-4 control-label">Matric Number</label>
 
                             <div class="col-md-6">
-                                <input id="matric_no" type="text" class="form-control" name="matric_no" value="{{ old('matric_no') }}" required autofocus>
+                                <input id="matric_no" type="text" class="form-control" name="matric_no" value="{{ old('matric_no') }}" required >
 
                                 @if ($errors->has('matric_no'))
                                     <span class="help-block">
@@ -38,15 +38,20 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('sig') ? ' has-error' : '' }}">
-                            <label for="sig" class="col-md-4 control-label">SIG</label>
+                        <div class="form-group{{ $errors->has('kelab_id') ? ' has-error' : '' }}">
+                            <label for="kelab_id" class="col-md-4 control-label">SIG</label>
 
                             <div class="col-md-6">
-                                <input id="sig" type="text" class="form-control" name="sig" value="{{ old('sig') }}" required autofocus>
+                              <select class="form-control" name="kelab_id">
+                                <option value="" disabled selected>Please Select</option>
+                                @foreach($kelabs as $kelab)
+                                  <option value="{{ $kelab->id }}">{{ $kelab->name }}</option>
+                                @endforeach
+                              </select>
 
-                                @if ($errors->has('sig'))
+                                @if ($errors->has('kelab_id'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('sig') }}</strong>
+                                        <strong>{{ $errors->first('kelab_id') }}</strong>
                                     </span>
                                 @endif
                             </div>

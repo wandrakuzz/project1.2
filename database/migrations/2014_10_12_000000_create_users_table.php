@@ -17,12 +17,14 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('matric_no')->unique();
-            $table->string('sig');
+            $table->unsignedInteger('kelab_id')->index();
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('user_group', ['admin','penasihat','pelajar'])->default('pelajar');
+            $table->enum('user_group', ['admin','penasihat','pelajar'])->default('penasihat');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('kelab_id')->references('id')->on('kelabs')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

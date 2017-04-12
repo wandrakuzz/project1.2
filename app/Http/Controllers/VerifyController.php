@@ -53,7 +53,7 @@ class VerifyController extends Controller
       $verify->activity_date = $request->activity_date;
       $verify->activity_type = $request->activity_type;
       $verify->activity_report = $request->hasFile('activity_report')
-          ? $request->activity_report->store('public') : '';
+          ? $request->activity_report->store('public/file') : '';
 
       // if ($request->hasFile('activity_report')){
       //

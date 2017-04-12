@@ -16,9 +16,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+ 
+Route::group(['middleware' => ['auth']],function(){
 
-Route::get('/home', 'HomeController@index');
-Route::resource('/suggest', 'SuggestController');
-Route::resource('/suggestview', 'SuggestController');
-Route::resource('/verify', 'VerifyController');
-Route::resource('/profile', 'ProfileController');
+  Route::get('/index', 'HomeController@index');
+  Route::resource('/suggest', 'SuggestController');
+  Route::resource('/suggestview', 'SuggestController');
+  Route::resource('/verify', 'VerifyController');
+  Route::resource('/profile', 'ProfileController');
+
+
+});

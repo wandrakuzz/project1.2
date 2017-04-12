@@ -78,7 +78,7 @@ class ProfileController extends Controller
         //
         // $this->validate($request, ['post_content' => 'required',]);
 
-        //  dd($request->all());
+          // dd($request->all());
         $user = User::findOrFail($id);
         $profile = Profile::where('user_id', $id)->first();
 
@@ -91,8 +91,7 @@ class ProfileController extends Controller
           $profile->gender = $request->gender;
           $profile->kursus = $request->kursus;
           $profile->no_tel = $request->no_tel;
-          $profile->picture = $request->hasFile('picture')
-              ? $profile->picture->store('public') : '';
+          $profile->picture = $request->picture;
           // $profile->picture = $request->picture;
 
           $user->save();

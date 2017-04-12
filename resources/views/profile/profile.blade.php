@@ -46,7 +46,7 @@
           </tr>
           <tr>
             <td>Special Interest Group (SIG)</td>
-            <td>{{ $profile->sig }}</td>
+            <td>{{ $profile->user->kelab->name }}</td>
           </tr>
           <tr>
             <td>No Telefon</td>

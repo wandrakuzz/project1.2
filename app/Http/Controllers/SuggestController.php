@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Suggest;
 use App\Profile;
 use Auth;
+use App\User;
+
 
 class SuggestController extends Controller
 {
@@ -16,8 +18,12 @@ class SuggestController extends Controller
      */
     public function index()
     {
-        $profiles = Profile::where('user_id',Auth::user()->id)->get();
-        return view('Suggest.suggest',compact('profiles'));
+        // $profiles = Profile::where('user_id',Auth::user()->id)->get();
+        // dd($profiles);
+        $users = User::findOrfail(Auth::user()->id)->with('suggest')->get();
+
+        // dd($users);
+        return view('Suggest.suggest',compact('users'));
     }
 
     /**
@@ -27,7 +33,7 @@ class SuggestController extends Controller
      */
     public function create()
     {
-
+      return view('Suggest.suggest');
     }
 
     /**
@@ -46,8 +52,12 @@ class SuggestController extends Controller
         $suggest->activity_time_start = $request->activity_time_start;
         $suggest->activity_time_end = $request->activity_time_end;
         $suggest->activity_summary = $request->activity_summary;
-        // $post->user_id = Auth::user()->id;
+        $suggest->user_id = Auth::id();
         $suggest->save();
+
+      //   $suggest->statusCadangan()->create([
+      //     'suggest_id' => $suggest->id,
+      // ]);
         return redirect()->action('SuggestController@store')->withMessage('Post has been successfully added');
 
 

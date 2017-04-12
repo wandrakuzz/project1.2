@@ -4,85 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ config('app.name', 'Laman Pelajar') }}</title>
+        <title>{{ config('app.name', 'Laman Penasihat') }}</title>
 
         <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('bootstrap/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Morris -->
+        <link href="{{ asset('bootstrap/css/plugins/morris/morris-0.4.3.min.css') }}" rel="stylesheet">
+
         <link href="{{ asset('bootstrap/css/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('bootstrap/css/style.css') }}" rel="stylesheet">
-
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
-
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-
 
 
     </head>
     <body>
       <!-- Start Navigation Bar -->
         <div id="wrapper">
-        @if(\Auth::user()->user_group == 'pelajar')
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav metismenu" id="side-menu">
-                    <li class="nav-header">
-                        <div class="dropdown profile-element"> <span>
-                                <img alt="image" class="img-circle" src="{{ asset('bootstrap/img/1.jpg') }}" />
-                                 </span>
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
-                                </span> <span class="text-muted text-xs block">SEIS <b class="caret"></b></span> </span> </a>
-                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="contacts.html">Contacts</a></li>
-                                <li><a href="mailbox.html">Mailbox</a></li>
-                                <li class="divider"></li>
-                                <li><a href="{{ route('logout') }}">Keluar</a></li>
-                            </ul>
-                        </div>
-                        <div class="logo-element">
-                            IN+
-                        </div>
-                    </li>
-
-                    <li>
-                        <a href="{{ url('/home') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/suggest') }}"><i class="fa fa-pencil"></i> <span class="nav-label">Cadangan Aktiviti</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Keputusan</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="graph_flot.html">Semester 1 sesi 2014/2015</a></li>
-                            <li><a href="graph_morris.html">Semester 2 sesi 2014/2015</a></li>
-                            <li><a href="graph_rickshaw.html">Semester 1 sesi 2015/2016</a></li>
-                            <li><a href="graph_chartjs.html">Semester 2 sesi 2015/2016</a></li>
-                            <li><a href="graph_chartist.html">Semester 1 sesi 2016/2017</a></li>
-                            <li><a href="c3.html">Semester 1 sesi 2016/2017</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{ url('/verify') }}"><i class="fa fa-cloud-upload"></i> <span class="nav-label">Pembuktian Aktiviti</span>  </a>
-                    </li>
-                    <li>
-                        <a href="projek.html"><i class="fa fa-flask"></i> <span class="nav-label">Kemaskini Aktiviti</span></a>
-                    </li>
-                    <li>
-                        <a href="pertukaranSIG.html"><i class="fa fa-flask"></i> <span class="nav-label">Permohonan Pertukaran SIG</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/profile') }}"><i class="fa fa-group"></i> <span class="nav-label">Kemaskini Maklumat Diri</span></a>
-                    </li>
-                    <li>
-                        <a href="maklumat.html"><i class="fa fa-edit"></i> <span class="nav-label">Maklumat Tentang SIG</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        @else
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
@@ -140,7 +80,7 @@
                 </ul>
             </div>
         </nav>
-        @endif
+
         <!-- End Navigation Bar -->
 
 
@@ -219,55 +159,49 @@
             <!-- End Header -->
 
             <div class="row">
-
-
-
-
-
-              <div class="col-lg-12">
-                  <div class="ibox float-e-margins">
-                      <div class="ibox-title">
-                          <h5>@yield('page-title')</h5>
-
-                      </div>
-                      <div class="ibox-content">
-                          <div class="row">
-
-                                @yield('content')
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
+                  @yield('content')
             </div>
 
 
-            <script src="{{ asset('bootstrap/js/jquery-2.1.1.js') }}"></script>
-            <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
 
+                        <!-- Mainly scripts -->
+                        <script src="js/jquery-2.1.1.js"></script>
+                        <script src="js/bootstrap.min.js"></script>
+                        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+                        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-            <!-- Custom and plugin javascript -->
-            <script src="{{ asset('bootstrap/js/inspinia.js') }}"></script>
-            <script src="{{ asset('bootstrap/js/jquery.metisMenu.js') }}" charset="utf-8"></script>
-            <script src="{{ asset('bootstrap/js/jquery.slimscroll.min.js') }}" charset="utf-8"></script>
+                        <!-- Flot -->
+                        <script src="js/plugins/flot/jquery.flot.js"></script>
+                        <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+                        <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+                        <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+                        <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+                        <script src="js/plugins/flot/jquery.flot.symbol.js"></script>
+                        <script src="js/plugins/flot/jquery.flot.time.js"></script>
 
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script>
-              $(function () {
+                        <!-- Peity -->
+                        <script src="js/plugins/peity/jquery.peity.min.js"></script>
+                        <script src="js/demo/peity-demo.js"></script>
 
-                $('.datepicker').datepicker();
+                        <!-- Custom and plugin javascript -->
+                        <script src="js/inspinia.js"></script>
+                        <script src="js/plugins/pace/pace.min.js"></script>
 
-              });
-            </script>
+                        <!-- jQuery UI -->
+                        <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-            <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-            <script>
-            $(document).ready(function(){
-              $('.timepicker').timepicker({});
-            });
-            </script>
+                        <!-- Jvectormap -->
+                        <script src="js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+                        <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 
+                        <!-- EayPIE -->
+                        <script src="js/plugins/easypiechart/jquery.easypiechart.js"></script>
+
+                        <!-- Sparkline -->
+                        <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+                        <!-- Sparkline demo data  -->
+                        <script src="js/demo/sparkline-demo.js"></script>
 
     </body>
 </html>

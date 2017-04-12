@@ -15,4 +15,9 @@ class Suggest extends Model
       'activity_summary',
 
      ];
+
+     public function user()
+     {
+         return $this->belongsTo(User::class, 'user_id');
+     }
 }
