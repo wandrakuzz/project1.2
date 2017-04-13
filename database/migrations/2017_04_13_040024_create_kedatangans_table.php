@@ -16,11 +16,12 @@ class CreateKedatangansTable extends Migration
         Schema::create('kedatangans', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('minit_mesyuarat_id');
-            $table->string('name');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
 
 
             $table->foreign('minit_mesyuarat_id')->references('id')->on('minit_mensyuarats')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

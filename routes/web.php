@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
- 
+
 Route::group(['middleware' => ['auth']],function(){
 
   Route::get('/index', 'HomeController@index');
@@ -27,3 +27,5 @@ Route::group(['middleware' => ['auth']],function(){
 
 
 });
+
+Route::resource('/semak', 'SemakController');

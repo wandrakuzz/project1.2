@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('kelab_id')->index();
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('user_group', ['admin','penasihat','pelajar'])->default('penasihat');
+            $table->enum('user_group', ['admin','penasihat','pelajar'])->default('pelajar');
             $table->rememberToken();
             $table->timestamps();
 

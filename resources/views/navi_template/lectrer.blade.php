@@ -45,12 +45,12 @@
                             IN+
                         </div>
                         <li>
-                            <a href="penasihat.html"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
+                            <a href="{{ url('/semak') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-send-o"></i> <span class="nav-label">Aktiviti</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="penasihatsemak.html">Semak Cadangan</a></li>
+                                <li><a href="{{ url('/semak') }}">Semak Cadangan</a></li>
                                 <li><a href="penasihatupload.html">Semak Pembuktian</a></li>
                             </ul>
                         </li>
@@ -159,7 +159,7 @@
             <!-- End Header -->
 
             <div class="row">
-                  @yield('content')
+                  @yield('semak')
             </div>
 
 

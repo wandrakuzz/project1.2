@@ -68,11 +68,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                              @forelse ($users[0]->suggest as $suggest)
+                              @forelse ($suggests as $suggest)
                             <tr>
                                 <td>{{ $suggest->id or ''}}</td>
-                                <td>{{ $users[0]->name or '' }}</td>
-                                <td>{{ $users[0]->matric_no or '' }}</td>
+                                <td>{{ $suggest->user->name or '' }}</td>
+                                <td>{{ $suggest->user->matric_no or '' }}</td>
                                 <td>{{ $suggest->activity_name or '' }}</input></td>
                                 <td>{{ $suggest->activity_time_start or '' }}</input></td>
                                 <td>{{ $suggest->activity_summary or '' }}</input></td>
