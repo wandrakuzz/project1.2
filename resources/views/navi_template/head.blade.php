@@ -17,6 +17,16 @@
 
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 
+        <style type="text/css">
+        .img-circle-profile {
+            border-radius: 50%;
+            border: 1px solid black;
+            background-position: center center;
+            background-repeat: no-repeat;
+            object-fit: cover;
+        }
+    </style>
+
 
 
     </head>
@@ -267,6 +277,8 @@
               $('.timepicker').timepicker({});
             });
             </script>
+
+            @yield('scripts')
 
 
     </body>

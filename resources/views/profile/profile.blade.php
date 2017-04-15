@@ -18,49 +18,47 @@
 </div>
 <div class="panel-body">
   <div class="row">
-    <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+    <div class="col-md-3 col-lg-3 " align="center">
+      <img class="image-placeholder img-circle-profile" src="{{ $users[0]->profile->picture }}" style="width: 100px; height: 100px"/>
+    </div>
 
     <div class=" col-md-9 col-lg-9 ">
       <table class="table table-user-information">
         <tbody>
-          @foreach ($profiles as $profile)
+          @foreach ($users as $user)
           <tr>
             <td>Nama Penuh:</td>
-            <td>{{ $profile->user->name }}</td>
+            <td>{{ $user->name }}</td>
           </tr>
           <tr>
             <td>Matrik No:</td>
-            <td>{{ $profile->user->matric_no }}</td>
+            <td>{{ $user->matric_no }}</td>
           </tr>
           <tr>
             <td>Jantina</td>
-            <td>{{ $profile->gender }}</td>
+            <td>{{ $user->profile->gender }}</td>
           </tr>
           <tr>
             <td>Email</td>
-            <td>{{ $profile->user->email }}</td>
+            <td>{{ $user->email }}</td>
           </tr>
           <tr>
             <td>Kursus</td>
-            <td>{{ $profile->kursus }}</td>
+            <td>{{ $user->profile->kursus }}</td>
           </tr>
           <tr>
             <td>Special Interest Group (SIG)</td>
-            <td>{{ $profile->user->kelab->name }}</td>
+            <td>{{ $user->kelab->name }}</td>
           </tr>
           <tr>
             <td>No Telefon</td>
-            <td>{{ $profile->no_tel }}</td>
-          </tr>
-          <tr>
-            <td>Profile Picture</td>
-            <td>{{ $profile->picture }}</td>
+            <td>{{ $user->profile->no_tel }}</td>
           </tr>
           @endforeach
         </tbody>
       </table>
-      @if( $profile->user_id == Auth::user()->id)
-      <a href="{{ action ('ProfileController@edit',   $profile->user_id) }}" class="btn btn-success">Kemaskini Maklumat Diri</a>
+      @if( $user->id == Auth::user()->id)
+      <a href="{{ action ('ProfileController@edit',   $user->id) }}" class="btn btn-success">Kemaskini Maklumat Diri</a>
       <a href="student.html" class="btn btn-success">Tukar Katalaluan</a>
       @endif
     </div>

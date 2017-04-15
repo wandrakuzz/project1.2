@@ -91,7 +91,7 @@ class RegisterController extends Controller
       'gender' => null,
       'kursus' => null,
       'no_tel' => null,
-      'picture' => null,
+      'picture' => '/images/img/default_picture.png',
 
       //column seterusnya pada profiles table
   ]);

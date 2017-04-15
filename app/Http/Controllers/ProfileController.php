@@ -17,8 +17,9 @@ class ProfileController extends Controller
     public function index()
     {
         //
-        $profiles = Profile::where('user_id',Auth::user()->id)->get();
-        return view ('profile.profile', compact('profiles'));
+        $users = User::where('id',Auth::user()->id)->with('profile','kelab')->get();
+
+        return view ('profile.profile', compact('users'));
     }
 
     /**
@@ -62,8 +63,9 @@ class ProfileController extends Controller
     public function edit($id)
     {
         //
-        $profile = Profile::findOrFail($id);
-        return view('profile.profileform', compact('profile'));
+        //$users = User::findOrFail($id);
+        $user = User::where('id',Auth::user()->id)->with('profile','kelab')->get();
+        return view('profile.profileform', compact('user'));
     }
 
     /**
@@ -84,7 +86,6 @@ class ProfileController extends Controller
 
           $user->name = $request->name;
           $user->email = $request->email;
-          $user->sig = $request->sig;
           $user->matric_no = $request->matric_no;
 
 
@@ -93,6 +94,18 @@ class ProfileController extends Controller
           $profile->no_tel = $request->no_tel;
           $profile->picture = $request->picture;
           // $profile->picture = $request->picture;
+
+          if ($request->hasFile('picture'))
+        {
+
+            $this->validate($request, [
+                'picture' => 'required|image'
+            ]);
+
+            $image = '/images/profile/profile_' . time() . $user->id . '.' . $request->picture->getClientOriginalExtension();
+            $request->picture->move(public_path('images/profile/'), $image);
+            $profile->picture = $image;
+        }
 
           $user->save();
           $profile->save();
