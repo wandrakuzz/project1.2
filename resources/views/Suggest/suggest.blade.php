@@ -50,9 +50,9 @@
                       </div>
                   </form>
                 </div>
+              
                 <div id="menu2" class="tab-pane">
                   <div class="panel-body">
-
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -76,7 +76,7 @@
                                 <td>{{ $suggest->activity_name or '' }}</input></td>
                                 <td>{{ $suggest->activity_time_start or '' }}</input></td>
                                 <td>{{ $suggest->activity_summary or '' }}</input></td>
-                                <td><button class="btn btn-success">Terima</button></td>
+                                <td><button class="btn @if($suggest->status=='rejected') btn-danger @elseif ($suggest->status=='approved') btn-success @else btn-info @endif">@if($suggest->status=='rejected') Ditolak @elseif ($suggest->status=='approved') Diterima @else Pending @endif</button></td>
                             </tr>
 
                             @empty

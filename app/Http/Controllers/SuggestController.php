@@ -20,10 +20,12 @@ class SuggestController extends Controller
     {
         // $profiles = Profile::where('user_id',Auth::user()->id)->get();
         // dd($profiles);
-        $suggests = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
+        //$suggests = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
+
+         $suggests = Suggest::where('user_id',Auth::user()->id)->get();
 
         // dd($users);
-        return view('Suggest.suggest',compact('suggests'));
+        return view('Suggest.view',compact('suggests'));
     }
 
     /**
@@ -33,7 +35,7 @@ class SuggestController extends Controller
      */
     public function create()
     {
-      return view('Suggest.suggest');
+      return view('Suggest.create');
     }
 
     /**

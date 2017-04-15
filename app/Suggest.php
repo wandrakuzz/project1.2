@@ -13,6 +13,7 @@ class Suggest extends Model
       'activity_time_start',
       'activity_time_end',
       'activity_summary',
+      'status',
 
      ];
 

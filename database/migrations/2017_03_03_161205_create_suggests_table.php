@@ -22,7 +22,7 @@ class CreateSuggestsTable extends Migration
             $table->string('activity_time_start');
             $table->string('activity_time_end');
             $table->string('activity_summary');
-            $table->boolean('is_approved')->default(false);
+            $table->enum('status',['approved','rejected','pending'])->default('pending');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

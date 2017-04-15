@@ -25,7 +25,9 @@ Route::group(['middleware' => ['auth']],function(){
   Route::resource('/verify', 'VerifyController');
   Route::resource('/profile', 'ProfileController');
 
+  Route::resource('/semak', 'SemakController');
+  Route::get('/terima/{id}','SemakController@terima');
+  Route::get('/tolak/{id}','SemakController@tolak');
+
 
 });
-
-Route::resource('/semak', 'SemakController');

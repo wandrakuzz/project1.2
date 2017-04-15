@@ -23,8 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(\Auth::user()->user_group == 'pelajar')
-          return view('home');
-        else return view('penasihat');
+      
+          return view('index');
+
     }
 }

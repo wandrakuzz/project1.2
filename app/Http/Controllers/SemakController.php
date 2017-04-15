@@ -18,9 +18,10 @@ class SemakController extends Controller
     public function index()
     {
         //
-        $suggests = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
+        $semaks = Suggest::with('user')->where('status','pending')->paginate(15);
+        //$semaks = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
 
-        return view('LectStatus.semak',compact('suggests'));
+        return view('LectStatus.semak',compact('semaks'));
     }
 
     /**
@@ -87,5 +88,25 @@ class SemakController extends Controller
     public function destroy(Semak $semak)
     {
         //
+    }
+
+    public function terima($id)
+    {
+
+      $terima = Suggest::findOrFail($id);
+      $terima->status = 'approved';
+      $terima->save();
+
+      return redirect()->route('semak.index');
+    }
+
+    public function tolak($id)
+    {
+      $tolak = Suggest::findOrFail($id);
+      $tolak->status='rejected';
+
+      $tolak->save();
+
+      return redirect()->route('semak.index');
     }
 }
