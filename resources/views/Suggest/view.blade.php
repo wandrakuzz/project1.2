@@ -36,7 +36,7 @@
               @empty
 
               <tr>
-                <td colspan="4">Tiada data</td>
+                <td colspan="8">Tiada data</td>
               </tr>
 
               @endforelse
