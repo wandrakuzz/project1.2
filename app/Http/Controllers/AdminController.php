@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Suggest;
-use App\Verify;
-use App\Profile;
 use Auth;
 use App\User;
 
 
-class SuggestController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,14 +16,11 @@ class SuggestController extends Controller
      */
     public function index()
     {
-        // $profiles = Profile::where('user_id',Auth::user()->id)->get();
-        // dd($profiles);
-        //$suggests = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
+        //
+        $users = User::with('profile','kelab')->paginate(10);
 
-         $suggests = Suggest::where('user_id',Auth::user()->id)->get();
+        return view ('admin', compact('users'));
 
-        // dd($users);
-        return view('Suggest.view',compact('suggests'));
     }
 
     /**
@@ -36,7 +30,7 @@ class SuggestController extends Controller
      */
     public function create()
     {
-      return view('Suggest.create');
+        //
 
     }
 
@@ -48,26 +42,7 @@ class SuggestController extends Controller
      */
     public function store(Request $request)
     {
-
-        $suggest = new Suggest;
-        $suggest->activity_name = $request->activity_name;
-        $suggest->activity_date_start = $request->activity_date_start;
-        $suggest->activity_date_end = $request->activity_date_end;
-        $suggest->activity_time_start = $request->activity_time_start;
-        $suggest->activity_time_end = $request->activity_time_end;
-        $suggest->activity_summary = $request->activity_summary;
-        $suggest->user_id = Auth::id();
-
-        $suggest->save();
-
-
-      //   $suggest->statusCadangan()->create([
-      //     'suggest_id' => $suggest->id,
-      // ]);
-        return redirect()->action('SuggestController@store')->withMessage('Post has been successfully added');
-
-
-
+        //
     }
 
     /**
@@ -76,10 +51,9 @@ class SuggestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($users)
+    public function show($id)
     {
         //
-
     }
 
     /**
@@ -90,7 +64,10 @@ class SuggestController extends Controller
      */
     public function edit($id)
     {
-        //
+        //$users = User::findOrFail($id);
+        $users = User::findOrFail($id)->where('id',$id)->get();
+        //dd($users);
+        return view ('admin.create', compact('users'));
     }
 
     /**
@@ -114,5 +91,8 @@ class SuggestController extends Controller
     public function destroy($id)
     {
         //
+        $users = User::findOrFail($id);
+        $users->delete();
+        return back();
     }
 }

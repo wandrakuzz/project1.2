@@ -21,4 +21,9 @@ class Suggest extends Model
      {
          return $this->belongsTo(User::class, 'user_id');
      }
+
+     public function verify()
+     {
+       return $this->hasOne(Verify::class,'verify_id');
+     }
 }

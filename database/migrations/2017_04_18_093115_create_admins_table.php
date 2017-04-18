@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVerifiesTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class CreateVerifiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('verifies', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('suggest_id')->index();
-            $table->string('activity_type')->nullable;
-            $table->string('activity_report')->nullable;
             $table->timestamps();
-
-            $table->foreign('suggest_id')->references('id')->on('suggests')->onUpdate('cascade')->onDelete('cascade');
-
         });
     }
 
@@ -32,6 +26,6 @@ class CreateVerifiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('verifies');
+        Schema::dropIfExists('admins');
     }
 }

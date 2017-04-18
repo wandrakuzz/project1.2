@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Verify;
 use App\Profile;
 use App\User;
+use App\Suggest;
+
 use Auth;
 
 class VerifyController extends Controller
@@ -17,8 +19,10 @@ class VerifyController extends Controller
    */
   public function index()
   {
-      $profile = Profile::where('user_id',Auth::user()->id)->get();
-      return view('Suggest.verify' , compact('profile'));
+    $verifys = Suggest::with('user')->where('status','approved')->paginate(15);
+    //$semaks = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
+
+    return view('pembuktian.view',compact('verifys'));
   }
 
   /**
@@ -114,4 +118,18 @@ class VerifyController extends Controller
   {
       //
   }
+
+  public function bukti($id)
+  {
+    // $buktis = Suggest::where('id',Auth::user()->id)->get();
+    // dd($buktis);
+    // return view('pembuktian.verify', compact('buktis'));
+
+
+    $buktis = Verify::findOrFail($id);
+    dd($buktis);
+    return view('pembuktian.verify', compact('buktis'));
+
+  }
+
 }

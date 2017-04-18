@@ -8,6 +8,12 @@ class Verify extends Model
 {
     //
     protected $fillable = [
-      'activity_name','activity_date','activity_type','activity_report'
+      'suggest_id','activity_name','activity_date','activity_type','activity_report'
      ];
+
+
+     public function suggest()
+     {
+       return $this->belongsTo(Suggest::class, 'suggest_id');
+     }
 }
