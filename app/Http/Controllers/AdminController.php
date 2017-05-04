@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Kelab;
 
 
 class AdminController extends Controller
@@ -31,6 +32,7 @@ class AdminController extends Controller
     public function create()
     {
         //
+        return view('admin.create');
 
     }
 
@@ -43,6 +45,17 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         //
+        $user = new User;
+
+        $user->name = $request->name;
+        $user->matric_no = $request->matric_no;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->user_group = $request->role;
+
+        $user->save();
+
+        return redirect()->action('AdminController@store')->withMessage('Succesfull');
     }
 
     /**
@@ -80,6 +93,13 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = User::findOrFail($id);
+        $kelab = Kelab::where('user_id', $id)->first();
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->matric_no = $request->matric_no;
+        $user->password = $request->password;
     }
 
     /**
@@ -94,5 +114,12 @@ class AdminController extends Controller
         $users = User::findOrFail($id);
         $users->delete();
         return back();
+    }
+
+    public function showRegistrationForm()
+    {
+        $kelabs = Kelab::get();
+
+        return view('admin.create', compact('kelabs'));
     }
 }

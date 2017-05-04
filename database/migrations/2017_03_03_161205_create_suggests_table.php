@@ -17,12 +17,16 @@ class CreateSuggestsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->index();
             $table->string('activity_name');
-            $table->string('activity_date_start');
-            $table->string('activity_date_end');
-            $table->string('activity_time_start');
-            $table->string('activity_time_end');
+            $table->date('activity_date_start');
+            $table->date('activity_date_end');
+            $table->time('activity_time_start');
+            $table->time('activity_time_end');
             $table->string('activity_summary');
+            $table->boolean('is_verified')->default(false);
+            $table->string('activity_type')->nullable();
+            $table->string('path')->nullable();
             $table->enum('status',['approved','rejected','pending'])->default('pending');
+            $table->string('kertas_kerja')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

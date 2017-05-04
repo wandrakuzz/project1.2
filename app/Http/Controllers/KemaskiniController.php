@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Semak;
 use Illuminate\Http\Request;
-use App\User;
-use Auth;
-use App\Suggest;
 
-class SemakController extends Controller
+class KemaskiniController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +14,6 @@ class SemakController extends Controller
     public function index()
     {
         //
-        $semaks = Suggest::with('user')->where('status','pending')->paginate(15);
-        //$semaks = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
-
-        return view('LectStatus.semak',compact('semaks'));
     }
 
     /**
@@ -48,10 +40,10 @@ class SemakController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Semak  $semak
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Semak $semak)
+    public function show($id)
     {
         //
     }
@@ -59,10 +51,10 @@ class SemakController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Semak  $semak
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Semak $semak)
+    public function edit($id)
     {
         //
     }
@@ -71,10 +63,10 @@ class SemakController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Semak  $semak
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Semak $semak)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -82,30 +74,11 @@ class SemakController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Semak  $semak
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Semak $semak)
+    public function destroy($id)
     {
         //
-    }
-
-    public function terima($id)
-    {
-
-      $terima = Suggest::findOrFail($id);
-      $terima->status = 'approved';
-      $terima->save();
-
-      return redirect()->route('semak.index');
-    }
-
-    public function tolak($id)
-    {
-      $tolak = Suggest::findOrFail($id);
-      $tolak->status='rejected';
-      $tolak->save();
-
-      return redirect()->route('semak.index');
     }
 }

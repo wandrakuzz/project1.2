@@ -32,7 +32,7 @@
                   <!-- <td><button class="btn btn-warning">{{ $suggest->status }}</button></td> -->
                   <td>
                     <a href="{{ action('SemakController@tolak',$suggest->id)}}" class="btn btn-danger" name="button">Tolak</a>
-                    <a href="{{ action('SemakController@terima',$suggest->id) }}" class="btn btn-success" name="button">Terima</a>
+                    <a href="{{ action('SemakController@terima',$suggest->id)}}" class="btn btn-success" name="button">Terima</a>
                   </td>
               </tr>
 

@@ -30,7 +30,8 @@ Route::group(['middleware' => ['auth']],function(){
   Route::get('/tolak/{id}','SemakController@tolak');
   Route::get('/bukti/{id}', 'VerifyController@bukti');
 
+
+
 });
 
   Route::resource('/admin','AdminController');
-  

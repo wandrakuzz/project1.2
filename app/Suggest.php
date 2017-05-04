@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon;
 
 class Suggest extends Model
 {
@@ -13,9 +14,25 @@ class Suggest extends Model
       'activity_time_start',
       'activity_time_end',
       'activity_summary',
+      'is_verified',
+      'path',
       'status',
 
      ];
+
+
+    protected $dates = [
+      'activity_date_start',
+      'activity_date_end',
+    ];
+
+    /**
+     *
+     */
+    protected $casts = [
+      'is_verified' => 'boolean'
+    ];
+
 
      public function user()
      {

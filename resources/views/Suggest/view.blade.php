@@ -23,14 +23,24 @@
               </thead>
               <tbody>
                 @forelse ($suggests as $suggest)
-              <tr>
+              <tr> 
                   <td>{{ $suggest->id or ''}}</td>
                   <td>{{ $suggest->user->name or '' }}</td>
                   <td>{{ $suggest->user->matric_no or '' }}</td>
                   <td>{{ $suggest->activity_name or '' }}</input></td>
                   <td>{{ $suggest->activity_time_start or '' }}</input></td>
                   <td>{{ $suggest->activity_summary or '' }}</input></td>
-                  <td><button class="btn @if($suggest->status=='rejected') btn-danger @elseif ($suggest->status=='approved') btn-success @else btn-info @endif">@if($suggest->status=='rejected') Ditolak @elseif ($suggest->status=='approved') Diterima @else Pending @endif</button></td>
+                  <td>
+                    <button class="btn @if($suggest->status=='rejected') btn-danger
+                      @elseif ($suggest->status=='approved') btn-success
+                      @else btn-info
+                      @endif">
+                      @if($suggest->status=='rejected') Ditolak
+                      @elseif ($suggest->status=='approved') Diterima
+                      @else Pending
+                      @endif
+                    </button>
+                  </td>
               </tr>
 
               @empty

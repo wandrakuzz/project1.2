@@ -43,35 +43,7 @@ class VerifyController extends Controller
    */
   public function store(Request $request)
   {
-
-    $this->validate($request, [
-      'activity_name' => 'required',
-      'activity_date' => 'required',
-      'activity_type' => 'required',
-      'activity_report' => 'required|mimes:docx,pdf,rar' ,
-    ]);
-
-      // dd($request->all());
-      $verify = new Verify;
-      $verify->activity_name = $request->activity_name;
-      $verify->activity_date = $request->activity_date;
-      $verify->activity_type = $request->activity_type;
-      $verify->activity_report = $request->hasFile('activity_report')
-          ? $request->activity_report->store('public/file') : '';
-
-      // if ($request->hasFile('activity_report')){
-      //
-      //   $request->activity_report->store('public');
-      // }else {
-      //   return 'No File Selected';
-      // }
-
-      // $post->user_id = Auth::user()->id;
-      $verify->save();
-      return redirect()->action('VerifyController@store')->withMessage('Post has been successfully added');
-
-
-
+    //
   }
 
   /**
@@ -93,7 +65,9 @@ class VerifyController extends Controller
    */
   public function edit($id)
   {
-      //
+    $bukti = Suggest::findOrFail($id);
+
+    return view('pembuktian.verify', compact('bukti'));
   }
 
   /**
@@ -105,7 +79,29 @@ class VerifyController extends Controller
    */
   public function update(Request $request, $id)
   {
-      //
+      $this->validate($request, [
+        'activity_name'       => 'required',
+        'activity_date_start' => 'required',
+        'activity_type'       => 'required',
+        'activity_report'     => 'required',
+      ]);
+
+      $path = null;
+
+      if ($request->hasFile('activity_report')) {
+        $path = $request->file('activity_report')->store('public/file');
+      }
+
+      $suggest = Suggest::findOrFail($id);
+      $suggest->activity_name         = $request->activity_name;
+      $suggest->activity_date_start   = $request->activity_date_start;
+      $suggest->activity_type         = $request->activity_type;
+      $suggest->path                  = $path;
+      $suggest->is_verified           = true;
+      $suggest->save();
+
+      return redirect()->action('VerifyController@store')->withMessage('Post has been successfully added');
+
   }
 
   /**
@@ -117,19 +113,6 @@ class VerifyController extends Controller
   public function destroy($id)
   {
       //
-  }
-
-  public function bukti($id)
-  {
-    // $buktis = Suggest::where('id',Auth::user()->id)->get();
-    // dd($buktis);
-    // return view('pembuktian.verify', compact('buktis'));
-
-
-    $buktis = Verify::findOrFail($id);
-    dd($buktis);
-    return view('pembuktian.verify', compact('buktis'));
-
   }
 
 }

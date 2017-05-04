@@ -23,9 +23,9 @@ class SuggestController extends Controller
         // dd($profiles);
         //$suggests = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
 
-         $suggests = Suggest::where('user_id',Auth::user()->id)->get();
+         $suggests = Suggest::where('user_id',Auth::id())->get();
 
-        // dd($users);
+
         return view('Suggest.view',compact('suggests'));
     }
 

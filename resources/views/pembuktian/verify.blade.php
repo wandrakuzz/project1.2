@@ -11,29 +11,30 @@
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
 
-                            <form class="form-horizontal" action="{{ action('VerifyController@store') }}" method="POST" enctype="multipart/form-data">
+                            <form class="form-horizontal" action="{{ action('VerifyController@update', $bukti) }}" method="POST" enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
+                                {{ method_field('PATCH') }}
+
+
                                 <div class="form-group {{ $errors->has('activity_name') ? 'has-error' : '' }}">
                                   <label class="col-sm-2 control-label" for="activity_name">Nama Aktiviti:</label>
                                     <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="activity_name" name="activity_name" placeholder="Aktiviti">
+                                      <input type="text" class="form-control" id="activity_name" name="activity_name" value="{{ $bukti->activity_name}}" >
                                       @if ($errors->has('activity_name'))
                                           <span class="help-block">
                                               <strong>{{ $errors->first('activity_name') }}</strong>
                                           </span>
                                       @endif
                                     </div>
-
-
                                 </div>
-                                <div class="form-group {{ $errors->has('activity_date') ? 'has-error' : '' }}">
-                                  <label class="col-sm-2 control-label" for="activity_date">Tarikh:</label>
+                                <div class="form-group {{ $errors->has('activity_date_start') ? 'has-error' : '' }}">
+                                  <label class="col-sm-2 control-label" for="activity_date_start">Tarikh:</label>
                                     <div class="col-sm-10">
-                                      <input type="date" class="form-control"  id="activity_date" name="activity_date" placeholder="" format="dd/mm/yy">
-                                      @if ($errors->has('activity_date'))
+                                      <input type="text" class="form-control"  id="activity_date_start" name="activity_date_start" value="{{ $bukti->activity_date_start}}" >
+                                      @if ($errors->has('activity_date_start'))
                                           <span class="help-block">
-                                              <strong>{{ $errors->first('activity_date') }}</strong>
+                                              <strong>{{ $errors->first('activity_date_start') }}</strong>
                                           </span>
                                       @endif
                                     </div>
@@ -59,8 +60,8 @@
                                             </span>
                                         @endif
                                         </div>
-
                                 </div>
+
                                 <div class="form-group ">
                                     <label class="col-md-2 control-label"></label>
                                     <div class="col-md-4">

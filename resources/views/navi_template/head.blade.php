@@ -64,6 +64,12 @@
                         <a href="{{ url('/suggest') }}"><i class="fa fa-pencil"></i> <span class="nav-label">Cadangan Aktiviti</span></a>
                     </li>
                     <li>
+                        <a href="{{ url('/kemaskini')}}"><i class="fa fa-flask"></i> <span class="nav-label">Kemaskini Aktiviti</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/verify') }}"><i class="fa fa-cloud-upload"></i> <span class="nav-label">Pembuktian Aktiviti</span>  </a>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Keputusan</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="graph_flot.html">Semester 1 sesi 2014/2015</a></li>
@@ -74,20 +80,13 @@
                             <li><a href="c3.html">Semester 1 sesi 2016/2017</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="{{ url('/verify') }}"><i class="fa fa-cloud-upload"></i> <span class="nav-label">Pembuktian Aktiviti</span>  </a>
-                    </li>
-                    <li>
-                        <a href="projek.html"><i class="fa fa-flask"></i> <span class="nav-label">Kemaskini Aktiviti</span></a>
-                    </li>
+
+
                     <li>
                         <a href="pertukaranSIG.html"><i class="fa fa-flask"></i> <span class="nav-label">Permohonan Pertukaran SIG</span></a>
                     </li>
                     <li>
                         <a href="{{ url('/profile') }}"><i class="fa fa-group"></i> <span class="nav-label">Kemaskini Maklumat Diri</span></a>
-                    </li>
-                    <li>
-                        <a href="maklumat.html"><i class="fa fa-edit"></i> <span class="nav-label">Maklumat Tentang SIG</span></a>
                     </li>
                 </ul>
             </div>
@@ -263,19 +262,19 @@
 
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
             <script>
               $(function () {
 
-                $('.datepicker').datepicker();
+                $('.datepicker').datepicker({
+                  dateFormat: "yy-mm-dd"
+                });
+
+                $('.timepicker').timepicker({
+                  timeFormat: 'hh:mm:ss',
+                });
 
               });
-            </script>
-
-            <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-            <script>
-            $(document).ready(function(){
-              $('.timepicker').timepicker({});
-            });
             </script>
 
             @yield('scripts')
