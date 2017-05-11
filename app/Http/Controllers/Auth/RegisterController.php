@@ -88,7 +88,9 @@ class RegisterController extends Controller
 
       $user->profile()->create([
       'user_id' => $user->id,
+      'nama_penuh' => null,
       'gender' => null,
+      'tahun'  => null,
       'kursus' => null,
       'no_tel' => null,
       'picture' => '/images/img/default_picture.png',

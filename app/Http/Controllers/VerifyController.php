@@ -79,6 +79,7 @@ class VerifyController extends Controller
    */
   public function update(Request $request, $id)
   {
+
       $this->validate($request, [
         'activity_name'       => 'required',
         'activity_date_start' => 'required',
@@ -89,7 +90,8 @@ class VerifyController extends Controller
       $path = null;
 
       if ($request->hasFile('activity_report')) {
-        $path = $request->file('activity_report')->store('public/file');
+        $path = $request->file('activity_report')->store('public\file');
+
       }
 
       $suggest = Suggest::findOrFail($id);
@@ -114,5 +116,17 @@ class VerifyController extends Controller
   {
       //
   }
+
+  public function download($id)
+    {
+      $path = Suggest::whereId($id)->value('activity_report');
+
+      $download = Storage::url($path);
+
+      
+       return response()->download(public_path($download));
+    }
+
+
 
 }

@@ -13,7 +13,7 @@
 
 <div class="panel panel-info" style="margin-top:50px">
 <div class="panel-heading">
-  <h3 class="panel-title">Azwan<p class="pull-right">May 05,2014,03:00 pm </p></h3>
+  <h2 class="panel-title">Maklumat Diri</h2>
 
 </div>
 <div class="panel-body">
@@ -27,8 +27,12 @@
         <tbody>
           @foreach ($users as $user)
           <tr>
-            <td>Nama Penuh:</td>
+            <td>Nama :</td>
             <td>{{ $user->name }}</td>
+          </tr>
+          <tr>
+            <td>Nama Penuh :</td>
+            <td>{{ $user->profile->nama_penuh }}</td>
           </tr>
           <tr>
             <td>Matrik No:</td>
@@ -45,6 +49,10 @@
           <tr>
             <td>Kursus</td>
             <td>{{ $user->profile->kursus }}</td>
+          </tr>
+          <tr>
+            <td>Tahun:</td>
+            <td>{{ $user->profile->tahun }}</td>
           </tr>
           <tr>
             <td>Special Interest Group (SIG)</td>

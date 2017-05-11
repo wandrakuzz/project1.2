@@ -84,15 +84,17 @@ class ProfileController extends Controller
         $user = User::findOrFail($id);
         $profile = Profile::where('user_id', $id)->first();
 
-          $user->name = $request->name;
-          $user->email = $request->email;
+          $user->name      = $request->name;
+          $user->email     = $request->email;
           $user->matric_no = $request->matric_no;
 
 
-          $profile->gender = $request->gender;
-          $profile->kursus = $request->kursus;
-          $profile->no_tel = $request->no_tel;
-          $profile->picture = $request->picture;
+          $profile->gender     = $request->gender;
+          $profile->nama_penuh = $request->nama_penuh;
+          $profile->tahun      = $request->tahun;
+          $profile->kursus     = $request->kursus;
+          $profile->no_tel     = $request->no_tel;
+          $profile->picture    = $request->picture;
           // $profile->picture = $request->picture;
 
           if ($request->hasFile('picture'))

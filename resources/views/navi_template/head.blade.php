@@ -13,7 +13,8 @@
         <link href="{{ asset('bootstrap/css/style.css') }}" rel="stylesheet">
 
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+        <!-- <link rel="stylesheet" href="//resources/demos/style.css"> -->
 
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 
@@ -119,8 +120,8 @@
                         <li>
                             <a href="#"><i class="fa fa-send-o"></i> <span class="nav-label">Aktiviti</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="penasihatsemak.html">Semak Cadangan</a></li>
-                                <li><a href="penasihatupload.html">Semak Pembuktian</a></li>
+                                <li><a href="{{ url('/semak') }}">Semak Cadangan</a></li>
+                                <li><a href="{{ url('/semak-pembuktian') }}">Semak Pembuktian</a></li>
                             </ul>
                         </li>
                         <li>
@@ -141,7 +142,7 @@
                             <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Permohonan Pertukaran SIG</span></a>
                         </li>
                         <li>
-                            <a href="senarai.html"><i class="fa fa-group"></i> <span class="nav-label">Senarai Ahli</span></a>
+                            <a href="{{ url('/senarai-pelajar') }}"><i class="fa fa-group"></i> <span class="nav-label">Senarai Ahli</span></a>
                         </li>
                         <li>
                             <a href="widgets.html"><i class="fa fa-edit"></i> <span class="nav-label">Maklumat Tentang SIG</span></a>
@@ -249,10 +250,17 @@
               </div>
 
             </div>
-
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
             <script src="{{ asset('bootstrap/js/jquery-2.1.1.js') }}"></script>
             <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
+
+            <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+            <script>
+            $(document).ready(function(){
+              $('#myTable').DataTable();
+            });
+            </script>
 
 
             <!-- Custom and plugin javascript -->
@@ -260,7 +268,7 @@
             <script src="{{ asset('bootstrap/js/jquery.metisMenu.js') }}" charset="utf-8"></script>
             <script src="{{ asset('bootstrap/js/jquery.slimscroll.min.js') }}" charset="utf-8"></script>
 
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
             <script>

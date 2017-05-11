@@ -28,10 +28,20 @@ Route::group(['middleware' => ['auth']],function(){
   Route::resource('/semak', 'SemakController');
   Route::get('/terima/{id}','SemakController@terima');
   Route::get('/tolak/{id}','SemakController@tolak');
+  Route::get('/semak-pembuktian', 'SemakController@SemakPembuktian');
+  Route::get('/senarai-pelajar', 'SemakController@Senarai');
+
+
   Route::get('/bukti/{id}', 'VerifyController@bukti');
 
+  Route::resource('/kemaskini', 'KemaskiniController');
+
+  Route::get('muat-turun/{id}', 'VerifyController@download')->name('download');
 
 
 });
 
   Route::resource('/admin','AdminController');
+
+
+Route::get('muat-turun/{id}', 'DownloadController@download')->name('download');

@@ -108,4 +108,19 @@ class SemakController extends Controller
 
       return redirect()->route('semak.index');
     }
+
+    public function SemakPembuktian()
+    {
+      $pembuktians = Suggest::with('user')->where('status','approved')->paginate(15);
+
+      return view ('LectStatus.semak-pembuktian',compact('pembuktians'));
+
+    }
+
+    public function Senarai()
+    {
+      $senarais = User::with('profile')->where('user_group','pelajar')->get();
+
+      return view('LectStatus.senarai-pelajar',compact('senarais'));
+    }
 }

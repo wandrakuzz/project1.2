@@ -8,7 +8,7 @@ class Profile extends Model
 {
 
     protected $fillable = [
-      'user_id','gender', 'kursus','no_tel','picture'
+      'user_id','nama_penuh','gender', 'kursus','tahun','no_tel','picture'
     ];
 
     public function user()

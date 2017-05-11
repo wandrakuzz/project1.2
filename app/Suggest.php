@@ -43,4 +43,9 @@ class Suggest extends Model
      {
        return $this->hasOne(Verify::class,'verify_id');
      }
+
+     public function jawatan()
+     {
+       return $this->hasOne(Jawatan::class,'jawatan_id');
+     }
 }

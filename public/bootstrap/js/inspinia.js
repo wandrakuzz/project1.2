@@ -297,5 +297,3 @@ function WinMove() {
         })
         .disableSelection();
 }
-
-

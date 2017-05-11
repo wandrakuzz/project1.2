@@ -1,9 +1,9 @@
-@extends('navi_template.lectrer')
+@extends('navi_template.head')
 
-@section('semak')
-
+@section('content')
+<div class="row">
 <div class="col-sm-12">
-  <div class="container">
+
     <div class="panel-body">
 
       <div class="table-responsive">

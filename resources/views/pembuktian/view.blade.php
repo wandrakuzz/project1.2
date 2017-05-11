@@ -13,10 +13,11 @@
               <tr>
                   <th>No</th>
                   <th>Nama Aktiviti</th>
-                  <th>Tarikh Mul a</th>
+                  <th>Tarikh Mula</th>
                   <th>Tarikh Akhir</th>
                   <th>Masa Mula</th>
                   <th>Masa Akhir</th>
+                  <th>Fail Pembuktian</th>
                   <th>Tindakan</th>
 
               </tr>
@@ -30,6 +31,7 @@
                   <td>{{ $verify->activity_date_end or '' }}</input></td>
                   <td>{{ $verify->activity_time_start or '' }}</input></td>
                   <td>{{ $verify->activity_time_end or '' }}</td>
+                  <td>{{ $verify->activity_report or '' }}</td>
                   <td>
                     <a href="{{ action('VerifyController@edit', $verify)}}" class="btn btn-primary" name="button">Bukti</a>
                   </td>
