@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use App\Suggest;
+use App\Profile;
+use DB;
 
 class SemakController extends Controller
 {
@@ -17,11 +19,9 @@ class SemakController extends Controller
      */
     public function index()
     {
-        //
-        $semaks = Suggest::with('user')->where('status','pending')->paginate(15);
-        //$semaks = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
+      $tahun = DB::table('profiles')->selectRaw('tahun, count(*) as count')->groupBy('tahun')->get();
 
-        return view('LectStatus.semak',compact('semaks'));
+      return view('LectStatus.berita', compact('tahun'));
     }
 
     /**

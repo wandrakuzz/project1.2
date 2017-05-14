@@ -45,3 +45,12 @@ Route::group(['middleware' => ['auth']],function(){
 
 
 Route::get('muat-turun/{id}', 'DownloadController@download')->name('download');
+
+
+Route::get('send', function() {
+
+  $user = App\User::first();
+
+  $user->notify(new App\Notifications\WelcomeNotification($user));
+
+});

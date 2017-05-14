@@ -8,15 +8,12 @@
 
         <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('bootstrap/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
-
         <link href="{{ asset('bootstrap/css/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('bootstrap/css/style.css') }}" rel="stylesheet">
-
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-        <!-- <link rel="stylesheet" href="//resources/demos/style.css"> -->
-
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
 
         <style type="text/css">
         .img-circle-profile {
@@ -250,27 +247,17 @@
               </div>
 
             </div>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
-            <script src="{{ asset('bootstrap/js/jquery-2.1.1.js') }}"></script>
+            <script src="{{ asset('bootstrap/js/jquery.js') }}"></script>
             <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
-
-            <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-            <script>
-            $(document).ready(function(){
-              $('#myTable').DataTable();
-            });
-            </script>
-
-
-            <!-- Custom and plugin javascript -->
             <script src="{{ asset('bootstrap/js/inspinia.js') }}"></script>
-            <script src="{{ asset('bootstrap/js/jquery.metisMenu.js') }}" charset="utf-8"></script>
-            <script src="{{ asset('bootstrap/js/jquery.slimscroll.min.js') }}" charset="utf-8"></script>
-
-
+            <script src="{{ asset('bootstrap/js/jquery.metisMenu.js') }}"></script>
+            <script src="{{ asset('bootstrap/js/jquery.slimscroll.min.js') }}"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+            <script src="{{ asset('bootstrap/js/Chart.min.js') }}" ></script>
+            <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
             <script>
               $(function () {
 
@@ -281,6 +268,8 @@
                 $('.timepicker').timepicker({
                   timeFormat: 'hh:mm:ss',
                 });
+
+
 
               });
             </script>
