@@ -15,6 +15,7 @@ class KelabController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -81,5 +82,13 @@ class KelabController extends Controller
     public function destroy(Kelab $kelab)
     {
         //
+    }
+
+    public function tukar()
+    {
+
+        $kelabs = Kelab::get();
+
+        return view('change_sig.tukar',compact('kelabs'));
     }
 }

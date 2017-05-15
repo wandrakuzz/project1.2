@@ -56,7 +56,15 @@
                                         </label>
                                     </div>
                                     <div class="form-group"><label class="col-sm-2 control-label">Kursus :</label>
-                                        <div class="col-sm-10"><input type="text" class="form-control" name="kursus" placeholder="Kursus" value="{{ $user[0]->profile->kursus }}"></div>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="kursus">
+                                                <option disabled selected>Sila Pilih</option>
+                                                <option value="Computer Science (CS)">Computer Science (CS)</option>
+                                                <option value="Information Technology (TM)">Information Technology (TM)</option>
+                                                <option value="Software Engineering Information System (SEIS)">Software Engineering Information System (SEIS)</option>
+                                                <option value="Software Engineering Multimedia (SEMM)">Software Engineering Multimedia (SEMM)</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-group"><label class="col-sm-2 control-label">Tahun:</label>
                                         <div class="col-sm-10"></div>&nbsp &nbsp

@@ -52,6 +52,8 @@ class RegisterController extends Controller
         return view('auth.register', compact('kelabs'));
     }
 
+    
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -84,6 +86,8 @@ class RegisterController extends Controller
           'kelab_id' => $data['kelab_id'],
           'email' => $data['email'],
           'password' => bcrypt($data['password']),
+          'alasan' => null,
+          'kelab_baru' => null,
       ]);
 
       $user->profile()->create([

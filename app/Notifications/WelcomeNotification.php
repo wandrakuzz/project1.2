@@ -43,8 +43,8 @@ class WelcomeNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line("Selamat Datang {$this->user->name}")
-                    ->action('Notification Action', url('/'))
+                    ->line("Permohonan anda untuk menukar SIG telah luluskan, Sila login ke dalam sistem semula")
+                    ->action('Login Semula', url('/'))
                     ->line('Thank you for using our application!');
     }
 

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','kelab_id','matric_no','user_group'
+        'name', 'email', 'password','kelab_id','matric_no','user_group','alasan'
     ];
 
     /**
@@ -40,5 +40,10 @@ class User extends Authenticatable
     public function suggest()
     {
       return $this->hasMany(Suggest::class);
+    }
+
+    public function tukaran()
+    {
+      return $this->hasOne(Tukaran::class);
     }
 }

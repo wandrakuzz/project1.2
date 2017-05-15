@@ -36,21 +36,32 @@ Route::group(['middleware' => ['auth']],function(){
 
   Route::resource('/kemaskini', 'KemaskiniController');
 
+
+
   Route::get('muat-turun/{id}', 'VerifyController@download')->name('download');
+
+
+
+  // Email Notify
+  Route::get('send', function(Request $request) {
+
+    $user = App\User::where('id',Auth::user()->id)->first();
+
+    $user->notify(new App\Notifications\WelcomeNotification($user));
+
+    return redirect('/tukar-pengesahan');
+
+  });
 
 
 });
 
   Route::resource('/admin','AdminController');
+  Route::get('semak-tukar','TukaranController@index');
+
+  Route::get('tukar','TukaranController@index');
+  Route::patch('tukar/{id}','TukaranController@update');
+  Route::get('tukar-pengesahan','TukaranController@view');
 
 
 Route::get('muat-turun/{id}', 'DownloadController@download')->name('download');
-
-
-Route::get('send', function() {
-
-  $user = App\User::first();
-
-  $user->notify(new App\Notifications\WelcomeNotification($user));
-
-});

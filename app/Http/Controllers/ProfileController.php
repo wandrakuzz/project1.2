@@ -95,7 +95,7 @@ class ProfileController extends Controller
           $profile->kursus     = $request->kursus;
           $profile->no_tel     = $request->no_tel;
           $profile->picture    = $request->picture;
-          // $profile->picture = $request->picture;
+          
 
           if ($request->hasFile('picture'))
         {
@@ -128,4 +128,5 @@ class ProfileController extends Controller
     {
         //
     }
+
 }

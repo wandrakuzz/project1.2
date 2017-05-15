@@ -15,18 +15,7 @@ class CreateJawatansTable extends Migration
     {
         Schema::create('jawatans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ketua');
-            $table->string ('timbalan_kp');
-            $table->string('setiausaha');
-            $table->string('timbalan_su');
-            $table->string('bendahari');
-            $table->string('timbalan_bendahari');
-            $table->string('ajk_program');
-            $table->string('ajk_publisiti');
-            $table->string('ajk_tugaskhas');
-            $table->string('ajk_cenderamata');
-            $table->string('ajk_teknikal');
-            $table->string('ajk_perhubungan');
+            $table->string('name');
 
             $table->timestamps();
 
