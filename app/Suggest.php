@@ -17,6 +17,7 @@ class Suggest extends Model
       'is_verified',
       'path',
       'status',
+      'subjek_id',
 
      ];
 
@@ -47,5 +48,10 @@ class Suggest extends Model
      public function jawatan()
      {
        return $this->hasOne(Jawatan::class,'jawatan_id');
+     }
+
+     public function subjek()
+     {
+         return $this->belongsTo(Subjek::class, 'subjek_id');
      }
 }

@@ -19,12 +19,16 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']],function(){
 
+
+  // Pelajar Function
   Route::get('/index', 'HomeController@index');
   Route::resource('/suggest', 'SuggestController');
   Route::resource('/suggestview', 'SuggestController');
   Route::resource('/verify', 'VerifyController');
   Route::resource('/profile', 'ProfileController');
 
+
+  //Penasihat Semak Pelajar
   Route::resource('/semak', 'SemakController');
   Route::get('/terima/{id}','SemakController@terima');
   Route::get('/tolak/{id}','SemakController@tolak');
@@ -32,12 +36,23 @@ Route::group(['middleware' => ['auth']],function(){
   Route::get('/senarai-pelajar', 'SemakController@Senarai');
 
 
+  // Tukar SIG
+  Route::get('tukar','TukaranController@index');
+  Route::patch('tukar/{id}','TukaranController@change');
+  Route::get('tukar-pengesahan','TukaranController@view');
+  Route::patch('tukar-pengesahan/{id}','TukaranController@update');
+
+
+  // Main page lepas login
+  Route::resource('/berita', 'BeritaController');
+
+
   Route::get('/bukti/{id}', 'VerifyController@bukti');
 
   Route::resource('/kemaskini', 'KemaskiniController');
 
 
-
+  // Download Fail Pembuktian
   Route::get('muat-turun/{id}', 'VerifyController@download')->name('download');
 
 
@@ -57,11 +72,10 @@ Route::group(['middleware' => ['auth']],function(){
 });
 
   Route::resource('/admin','AdminController');
-  Route::get('semak-tukar','TukaranController@index');
 
-  Route::get('tukar','TukaranController@index');
-  Route::patch('tukar/{id}','TukaranController@update');
-  Route::get('tukar-pengesahan','TukaranController@view');
+  Route::get('download','DownloadController@getExcel');
+
+
 
 
 Route::get('muat-turun/{id}', 'DownloadController@download')->name('download');

@@ -4,8 +4,11 @@
 
 <div class="col-sm-12">
   <div class="panel panel-default">
+      <a href="{{ url('download')}}" class="btn btn-success pull-right">Cetak Excel</a>
   <!-- Default panel contents -->
-  <div class="panel-heading">Senarai Pelajar</div>
+  <div class="panel-heading">
+          Senarai Ahli SIG
+  </div>
   <div class="panel-body">
     <p>Senarai pelajar yang berdaftar di bawah Special Interest Group (SIG)</p>
 

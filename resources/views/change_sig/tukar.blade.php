@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-sm-12">
-    <form class="form-horizontal" action="{{ action ('TukaranController@update' , $tukarans[0]->id) }}" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" action="{{ action ('TukaranController@change' , $tukarans[0]->id) }}" method="POST" enctype="multipart/form-data">
 
       {{ csrf_field() }}
       {{ method_field('PATCH') }}
@@ -28,7 +28,7 @@
                     <select class="form-control" name="kelab_baru">
                       <option value="" disabled selected>Please Select</option>
                       @foreach($sigs as $sig)
-                        <option value="{{ $sig->id }}">{{ $sig->name }}</option>
+                        <option value="{{ $sig->name }}">{{ $sig->name }}</option>
                       @endforeach
                     </select>
                 </div>

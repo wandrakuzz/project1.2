@@ -19,9 +19,9 @@ class SemakController extends Controller
      */
     public function index()
     {
-      $tahun = DB::table('profiles')->selectRaw('tahun, count(*) as count')->groupBy('tahun')->get();
-
-      return view('LectStatus.berita', compact('tahun'));
+        $semaks = Suggest::with('user')->where('status','pending')->paginate(15);
+          //$semaks = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
+         return view('LectStatus.semak',compact('semaks'));
     }
 
     /**

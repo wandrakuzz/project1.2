@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->enum('user_group', ['admin','penasihat','pelajar'])->default('pelajar');
             $table->string('alasan')->nullable();
             $table->string('kelab_baru')->nullable();
+            $table->boolean('status')->default(false);
             $table->rememberToken();
             $table->timestamps();
 

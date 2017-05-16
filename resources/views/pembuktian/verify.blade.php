@@ -42,7 +42,17 @@
                                 <div class="form-group {{ $errors->has('activity_type') ? 'has-error' : '' }}">
                                   <label class="col-sm-2 control-label">Jenis Pembuktian:</label>
                                     <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="activity_type" name="activity_type" placeholder="Subjek Pembuktian">
+                                        <select class="form-control" name="activity_type">
+                                            <option value="" selected disabled>Pilih Pembuktian</option>
+                                            <option value="LMCK 1331 Komunikasi Efektif">LMCK 1331 - Komunikasi Efektif</option>
+                                            <option value="LMCK 1531 Kepimpinan Kreativiti">LMCK 1531 - Kepimpinan Kreativiti</option>
+                                            <option value="LMCK 1421 Pemikiran Kritikal">LMCK 1421 Pemikiran Kritikal dan Penyelesaian Masalah</option>
+                                            <option value="LMCK 1621 Etika Profesional">LMCK 1621 - Etika dan Profesional</option>
+                                            <option value="LMCK 2711 Tanggungjawab Alam Sekitar">LMCK 2711 - Tanggungjawab Alam Sekitar</option>
+                                            <option value="LMCK 2811 Sosial dan Kebertanggungjawaban">LMCK 2811 - Sosial dan Kebertanggungjawaban</option>
+                                            <option value="LMCK 2922 Kemahiran Insaniah">LMCK 2922 - Kemahiran Insaniah</option>
+                                        </select>
+                                      <!-- <input type="text" class="form-control" id="activity_type" name="activity_type" placeholder="Subjek Pembuktian"> -->
                                       @if ($errors->has('activity_type'))
                                           <span class="help-block">
                                               <strong>{{ $errors->first('activity_type') }}</strong>

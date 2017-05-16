@@ -56,7 +56,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('/home') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
+                        <a href="{{ url('/berita') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
                     </li>
                     <li>
                         <a href="{{ url('/suggest') }}"><i class="fa fa-pencil"></i> <span class="nav-label">Cadangan Aktiviti</span></a>
@@ -81,7 +81,7 @@
 
 
                     <li>
-                        <a href="pertukaranSIG.html"><i class="fa fa-flask"></i> <span class="nav-label">Permohonan Pertukaran SIG</span></a>
+                        <a href="{{ url('/tukar') }}"><i class="fa fa-flask"></i> <span class="nav-label">Permohonan Pertukaran SIG</span></a>
                     </li>
                     <li>
                         <a href="{{ url('/profile') }}"><i class="fa fa-group"></i> <span class="nav-label">Kemaskini Maklumat Diri</span></a>
@@ -112,7 +112,7 @@
                             IN+
                         </div>
                         <li>
-                            <a href="{{ url('/semak') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
+                            <a href="{{ url('/berita') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-send-o"></i> <span class="nav-label">Aktiviti</span><span class="fa arrow"></span></a>
@@ -136,13 +136,10 @@
                             <a href="pemarkahan.html"><i class="fa fa-flask"></i> <span class="nav-label">Pemarkahan Pelajar</span></a>
                         </li>
                         <li>
-                            <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Permohonan Pertukaran SIG</span></a>
+                            <a href="{{ url('/tukar-pengesahan') }}"><i class="fa fa-flask"></i> <span class="nav-label">Permohonan Pertukaran SIG</span></a>
                         </li>
                         <li>
                             <a href="{{ url('/senarai-pelajar') }}"><i class="fa fa-group"></i> <span class="nav-label">Senarai Ahli</span></a>
-                        </li>
-                        <li>
-                            <a href="widgets.html"><i class="fa fa-edit"></i> <span class="nav-label">Maklumat Tentang SIG</span></a>
                         </li>
                 </ul>
             </div>

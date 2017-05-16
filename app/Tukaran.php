@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tukaran extends Model
 {
     protected $fillable = [
-      'alasan',
+      'kelab_baru','alasan',
     ];
 
     public function user()

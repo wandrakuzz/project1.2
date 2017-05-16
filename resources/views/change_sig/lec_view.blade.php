@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="col-sm-12">
-        <div class="">
+        <div class="row">
             <table class="table table-striped">
             <thead>
                 <tr>
@@ -16,8 +16,9 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($tukarans as $tukaran)
                 <tr>
-                    @foreach ($tukarans as $tukaran)
+
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $tukaran->profile->nama_penuh }}</td>
                     <td>{{ $tukaran->matric_no }}</td>
@@ -33,9 +34,9 @@
                             <div class="col-sm-8">
                                 <select class="form-control" name="kelab_latest">
                                   <option value="" disabled selected>Please Select</option>
-                                  @foreach($sigs as $sig)
+                                 @foreach ($sigs as $sig)
                                     <option value="{{ $sig->id }}">{{ $sig->name }}</option>
-                                  @endforeach
+                                @endforeach
                                 </select>
                             </div>
                             <div class="col-sm-4">
@@ -44,12 +45,12 @@
 
                         </form>
                     </td>
-                    @endforeach
+
                 </tr>
+                    @endforeach
             </tbody>
         </table>
         </div>
-
     </div>
 
 @endsection

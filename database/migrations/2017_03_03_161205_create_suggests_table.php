@@ -16,7 +16,7 @@ class CreateSuggestsTable extends Migration
         Schema::create('suggests', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->index();
-            //$table->unsignedInteger('jawatan_id');
+            // $table->unsignedInteger('subjek_id')->index();
             $table->string('activity_name');
             $table->date('activity_date_start');
             $table->date('activity_date_end');
@@ -31,7 +31,7 @@ class CreateSuggestsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            //$table->foreign('jawatan_id')->references('id')->on('jawatans')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('subjek_id')->references('id')->on('subjeks')->onUpdate('cascade');
 
         });
 

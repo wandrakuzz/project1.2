@@ -28,9 +28,9 @@ class TukaranController extends Controller
     public function view()
     {
 
-        $tukarans = User::with('profile')->where('id',Auth::id())->get();
+        $tukarans = User::with('profile')->where('status',true)->get();
         $sigs = Kelab::get();
-
+        // dd($tukarans);
         return view('change_sig.lec_view',compact('tukarans','sigs'));
 
     }
@@ -54,16 +54,6 @@ class TukaranController extends Controller
     public function store(Request $request)
     {
 
-
-
-        $tukaran = new Tukaran;
-        $tukaran->user_id = Auth::user()->id;
-        $tukaran->kelab_id = $request->kelab_baru;
-        $tukaran->alasan = $request->alasan;
-
-
-
-        $tukaran->save();
     }
 
     /**
@@ -99,12 +89,13 @@ class TukaranController extends Controller
     {
         $tukarans = User::findOrFail($id);
 
-        $tukarans->kelab_id   = $request->kelab_latest;
+        $tukarans->kelab_id     = $request->kelab_latest;
         $tukarans->alasan       = $request->alasan;
-
+        $tukarans->status       = false;
 
         $tukarans->save();
-        return redirect('/send');
+        return redirect('send');
+
     }
 
     /**
@@ -125,10 +116,11 @@ class TukaranController extends Controller
 
         $tukarans->kelab_baru   = $request->kelab_baru;
         $tukarans->alasan       = $request->alasan;
+        $tukarans->status       = true;
 
 
         $tukarans->save();
-        return redirect()->action('TukaranController@index');
+        return redirect('/tukar');
     }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Berita;
+use DB;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -14,8 +15,11 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        //
+          $tahun = DB::table('profiles')->selectRaw('tahun, count(*) as count')->groupBy('tahun')->get();
+
+          return view('LectStatus.berita', compact('tahun'));
     }
+
 
     /**
      * Show the form for creating a new resource.
