@@ -10,7 +10,7 @@
 
 
       <div class="panel panel-default" style="border-bottom: 0px; box-shadow: none;">
-        <div class="panel-heading">Profile Picture</div>
+        <div class="panel-heading">Permohonan tukaran SIG</div>
         <div class="panel-body text-center">
 
             <div class="form-group"><label class="col-sm-2 control-label">Nama :</label>

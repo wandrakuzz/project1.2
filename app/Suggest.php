@@ -25,6 +25,7 @@ class Suggest extends Model
     protected $dates = [
       'activity_date_start',
       'activity_date_end',
+      'created_at',
     ];
 
     /**
@@ -53,5 +54,10 @@ class Suggest extends Model
      public function subjek()
      {
          return $this->belongsTo(Subjek::class, 'subjek_id');
+     }
+
+     public function project()
+     {
+       return $this->hasOne(Project::class);
      }
 }

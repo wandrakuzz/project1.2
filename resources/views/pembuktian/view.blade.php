@@ -25,13 +25,13 @@
               <tbody>
                 @forelse ($verifys as $verify)
               <tr>
-                  <td>{{ $verify->id or ''}}</td>
+                  <td>{{ $loop->iteration}}</td>
                   <td>{{ $verify->activity_name or '' }}</td>
                   <td>{{ $verify->activity_date_start->toDayDateTimeString() }}</td>
                   <td>{{ $verify->activity_date_end or '' }}</input></td>
                   <td>{{ $verify->activity_time_start or '' }}</input></td>
                   <td>{{ $verify->activity_time_end or '' }}</td>
-                  <td>{{ $verify->activity_report or '' }}</td>
+                  <td><a href="{{ url('muat-turun',$verify) }}">Download</a></td>
                   <td>
                     <a href="{{ action('VerifyController@edit', $verify)}}" class="btn btn-primary" name="button">Bukti</a>
                   </td>

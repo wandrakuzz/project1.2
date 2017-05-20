@@ -17,19 +17,21 @@
                   <th>Nama Aktiviti</th>
                   <th>Tarikh</th>
                   <th>Ringkasan</th>
+                  <th>Cipta</th>
                   <th>Status</th>
 
               </tr>
               </thead>
               <tbody>
                 @forelse ($suggests as $suggest)
-              <tr> 
-                  <td>{{ $suggest->id or ''}}</td>
+              <tr>
+                  <td>{{ $loop->iteration}}</td>
                   <td>{{ $suggest->user->name or '' }}</td>
                   <td>{{ $suggest->user->matric_no or '' }}</td>
                   <td>{{ $suggest->activity_name or '' }}</input></td>
                   <td>{{ $suggest->activity_time_start or '' }}</input></td>
                   <td>{{ $suggest->activity_summary or '' }}</input></td>
+                  <td>{{ $suggest->created_at->diffForHumans() }}</td>
                   <td>
                     <button class="btn @if($suggest->status=='rejected') btn-danger
                       @elseif ($suggest->status=='approved') btn-success

@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($tukarans as $tukaran)
+                @forelse ($tukarans as $tukaran)
                 <tr>
 
                     <td>{{ $loop->iteration }}</td>
@@ -47,7 +47,12 @@
                     </td>
 
                 </tr>
-                    @endforeach
+
+                @empty
+                <tr>
+                    <td colspan="8">Tiada permohonan</td>
+                </tr>
+                    @endforelse
             </tbody>
         </table>
         </div>

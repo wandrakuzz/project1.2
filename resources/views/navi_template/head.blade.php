@@ -10,9 +10,9 @@
         <link href="{{ asset('bootstrap/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
         <link href="{{ asset('bootstrap/css/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('bootstrap/css/style.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/jquery.dataTables.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/jquery.timepicker.min.css') }}">
 
 
         <style type="text/css">
@@ -250,11 +250,11 @@
             <script src="{{ asset('bootstrap/js/inspinia.js') }}"></script>
             <script src="{{ asset('bootstrap/js/jquery.metisMenu.js') }}"></script>
             <script src="{{ asset('bootstrap/js/jquery.slimscroll.min.js') }}"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+            <script src="{{ asset('bootstrap/js/jquery-ui.js') }}"></script>
+            <script src="{{ asset('bootstrap/js/jquery.timepicker.min.js') }}"></script>
             <script src="{{ asset('bootstrap/js/Chart.min.js') }}" ></script>
-            <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+            <script src="{{ asset('bootstrap/js/jquery.dataTables.min.js') }}"></script>
+            <script src="{{ asset('bootstrap/js/jquery.dataTables.bootstrap.min.js') }}"></script>
             <script>
               $(function () {
 

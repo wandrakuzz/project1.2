@@ -1,15 +1,21 @@
 @extends('navi_template.head')
 
 @section('content')
-<div class="row">
+
     <div class="col-sm-12">
-
         <div class="row">
-            <div class="col-sm-6 col-md-offset-3">
-                <canvas id="tahun-chart" width="150" height="150"></canvas>
-            </div>
-        </div>
-
+                <div class="col-lg-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Polar Area</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="text-center">
+                                <canvas id="tahun-chart" height="140"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </div>
 </div>
 @endsection
@@ -21,7 +27,7 @@
         var ctx = $('#tahun-chart');
 
         var myChart = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'polarArea',
             data: {
                 labels: [
                     @foreach($tahun as $item)

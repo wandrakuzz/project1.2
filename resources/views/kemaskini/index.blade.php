@@ -21,9 +21,10 @@
             </tr>
             </thead>
             <tbody>
-              <tr>
                 @forelse ($kemaskinis as $kemaskini)
-                <td>{{ $kemaskini->id }}</td>
+              <tr>
+
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $kemaskini->activity_name }}</td>
                 <td>{{ $kemaskini->activity_date_start }}</td>
                 <td>{{ $kemaskini->activity_time_start }}</td>

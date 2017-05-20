@@ -17,4 +17,9 @@ class Jawatan extends Model
     {
       return $this->belongsTo(Suggest::class, 'jawatan_id');
     }
+
+    public function project()
+    {
+      return $this->hasOne(Project::class);
+    }
 }

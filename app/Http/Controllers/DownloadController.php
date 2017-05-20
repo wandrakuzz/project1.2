@@ -25,6 +25,8 @@ class DownloadController extends Controller
         return response()->download(public_path($download));
      }
 
+     
+
      public function getExcel()
      {
          $lists = DB::table('users')

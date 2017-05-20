@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
       return $this->hasOne(Tukaran::class);
     }
+
+    public function project()
+    {
+      return $this->hasOne(Project::class);
+    }
 }

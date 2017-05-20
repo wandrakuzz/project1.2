@@ -31,7 +31,7 @@
                   <td>{{ $pembuktian->activity_name or '' }}</input></td>
                   <td>{{ $pembuktian->activity_date_start or '' }}</input></td>
                   <td>{{ $pembuktian->activity_type or '' }}</input></td>
-                  <td><a href="{{ action('VerifyController@download', $pembuktian) }}">Download</a></td>
+                  <td><a href="{{ action('DownloadController@download', $pembuktian) }}">Download</a></td>
                   <!-- <td><button class="btn btn-warning">{{ $pembuktian->status }}</button></td> -->
               </tr>
 
