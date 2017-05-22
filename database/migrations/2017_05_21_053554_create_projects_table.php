@@ -15,9 +15,10 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('suggest_id');
-            $table->string('user_id');
-            $table->string('jawatan_id');
+            $table->unsignedInteger('suggest_id')->index();
+            $table->unsignedInteger('user_id')->index();
+            $table->unsignedInteger('jawatan_id')->index();
+            $table->string('kedatangan'); 
             $table->timestamps();
 
             $table->foreign('suggest_id')->references('id')->on('suggests')->onUpdate('cascade');

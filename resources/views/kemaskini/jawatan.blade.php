@@ -14,75 +14,255 @@
       {{ csrf_field() }}
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">Ketua Program: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="kp" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->profile->nama_penuh }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Timbalan Ketua Program: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="tkp" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Setiausaha: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="su" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Timbalan Setiausaha: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="tsu" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Bendahari: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="bendahari" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->profile->nama_penuh }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Timbalan Bendahari: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="tbendahari" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">AJK Program: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="ajkprogram" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">AJK Publisiti: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="ajkpublisiti" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">AJK Tugas Khas: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="ajktugaskhas" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">AJK Cenderamata: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="ajkcenderamata" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">AJK Teknikal: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="ajkteknikal" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">AJK Perhubungan: </label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" name="ajkperhubungan" value=""></input>
+        <div class="col-sm-2">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($ahlis as $ahli)
+                <option value="{{ $ahli->id }}">{{ $ahli->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" name="jawatan_id">
+              <option value="" disabled selected>Please Select</option>
+              @foreach($pangkats as $pangkat)
+                <option value="{{ $pangkat->id }}">{{ $pangkat->name }}</option>
+              @endforeach
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input class="form-control" type="text" name="markah" value=""></input>
         </div>
       </div>
       <div class="form-group">

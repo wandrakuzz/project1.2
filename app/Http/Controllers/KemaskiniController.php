@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Suggest;
 use App\Jawatan;
+use App\Project;
+use App\User;
+
 
 class KemaskiniController extends Controller
 {
@@ -27,8 +30,17 @@ class KemaskiniController extends Controller
      */
     public function create()
     {
-        //
-        return view('kemaskini.jawatan');
+
+    }
+
+    public function jawatankuasa($id)
+    {
+        $shows    = Suggest::findOrFail($id);
+        $pangkats = Jawatan::get();
+        $ahlis    = User::with('profile')->get();
+
+        // dd($shows,$jawatans,$ahlis);
+        return view('kemaskini.jawatan',compact('shows,pangkats','ahlis'));
     }
 
     /**

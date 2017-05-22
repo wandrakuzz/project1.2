@@ -30,7 +30,7 @@
                 <td>{{ $kemaskini->activity_time_start }}</td>
                 <td><a href="{{ route('download', $kemaskini) }}">Download</a></td>
                 <td>
-                  <a href="{{ action ('KemaskiniController@create') }}" class="btn btn-primary">Kemaskini Aktiviti</a>
+                  <a href="{{ route ('kemaskini.jwatankuasa', $kemaskini) }}" class="btn btn-primary">Kemaskini Aktiviti</a>
                   <a href="{{ action ('KemaskiniController@edit', $kemaskini->id)}}" class="btn btn-warning">Muatnaik Kertas Kerja</a>
                 </td>
                 <!-- <td>''

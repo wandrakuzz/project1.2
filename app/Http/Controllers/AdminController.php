@@ -122,4 +122,9 @@ class AdminController extends Controller
 
         return view('admin.create', compact('kelabs'));
     }
+
+    public function front()
+    {
+        return view('admin.front-page');
+    }
 }

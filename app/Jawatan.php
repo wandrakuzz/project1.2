@@ -22,4 +22,9 @@ class Jawatan extends Model
     {
       return $this->hasOne(Project::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

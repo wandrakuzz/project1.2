@@ -51,6 +51,10 @@ Route::group(['middleware' => ['auth']],function(){
 
   Route::resource('/kemaskini', 'KemaskiniController');
 
+  // Route::resource('/jawatan', 'KemaskiniController');
+
+  Route::get('kemaskini/{id}/jawatankuasa', 'KemaskiniController@jawatankuasa')->name('kemaskini.jwatankuasa');
+
 
   // Download Fail Pembuktian
   Route::get('muat-turun/{id}', 'VerifyController@download')->name('download');
@@ -72,6 +76,7 @@ Route::group(['middleware' => ['auth']],function(){
 });
 
   Route::resource('/admin','AdminController');
+  Route::get('/page','AdminController@front');
 
   Route::get('download','DownloadController@getExcel');
 

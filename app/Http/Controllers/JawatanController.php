@@ -26,7 +26,7 @@ class JawatanController extends Controller
     public function create()
     {
 
-        return view('kemaskini.jawatan');
+    
     }
 
     /**

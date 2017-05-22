@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
           'kelab_id'    => '1',
           'email'       => 'kamal@gmail.com',
           'password'    => bcrypt('wan123'),
-          'user_group'  => 'pelajar',
+          'user_group'  => 'penasihat',
         ],
         [
           'name'        => 'karim',

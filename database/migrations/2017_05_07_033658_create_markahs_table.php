@@ -15,11 +15,12 @@ class CreateMarkahsTable extends Migration
     {
         Schema::create('markahs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('jawatan');
-            $table->integer('kedatangan');
-            $table->integer('kertas_kerja');
-            $table->integer('komitmen');
-            $table->integer('total');
+            $table->unsignedInteger('project_id')->index();
+            $table->integer('markah_jawatan');
+            $table->integer('markah_kedatangan');
+            $table->integer('markah_pembuktian');
+            $table->integer('markah_komitmen');
+            $table->boolean('status_markah')->default(false);
             $table->timestamps();
         });
     }
