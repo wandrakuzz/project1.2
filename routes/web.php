@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth']],function(){
   // Route::resource('/jawatan', 'KemaskiniController');
 
   Route::get('kemaskini/{id}/jawatankuasa', 'KemaskiniController@jawatankuasa')->name('kemaskini.jwatankuasa');
+  Route::Post('kemaskini/{id}/simpan', 'KemaskiniController@simpan');
 
 
   // Download Fail Pembuktian

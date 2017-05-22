@@ -40,7 +40,7 @@ class KemaskiniController extends Controller
         $ahlis    = User::with('profile')->get();
 
         // dd($shows,$jawatans,$ahlis);
-        return view('kemaskini.jawatan',compact('shows,pangkats','ahlis'));
+        return view('kemaskini.jawatan',compact('shows','pangkats','ahlis'));
     }
 
     /**
@@ -52,24 +52,47 @@ class KemaskiniController extends Controller
     public function store(Request $request)
     {
         //
-        $jawatan = new Jawatan;
-        $jawatan->ketua               = $request->kp;
-        $jawatan->timbalan_kp         = $request->tkp;
-        $jawatan->setiausaha          = $request->su;
-        $jawatan->timbalan_su         = $request->tsu;
-        $jawatan->bendahari           = $request->bendahari;
-        $jawatan->timbalan_bendahari  = $request->tbendahari;
-        $jawatan->ajk_program         = $request->ajkprogram;
-        $jawatan->ajk_publisiti       = $request->ajkpublisiti;
-        $jawatan->ajk_cenderamata     = $request->ajkcenderamata;
-        $jawatan->ajk_tugaskhas       = $request->ajktugaskhas;
-        $jawatan->ajk_teknikal        = $request->ajkteknikal;
-        $jawatan->ajk_perhubungan     = $request->ajkperhubungan;
+        $project = new Project;
+        $project->suggest_id          = Suggest::findOrFail($id);
+        $project->user_id             = $request->nama_kp;
+        $project->jawatan_id          = $request->kp;
+        $project->kedatangan          = $request->kedatangan_kp;
+        $project->user_id             = $request->nama_tkp;
+        $project->jawatan_id          = $request->tkp;
+        $project->kedatangan          = $request->kedatangan_tkp;
+        $project->user_id             = $request->nama_bendahari;
+        $project->jawatan_id          = $request->kp;
+        $project->kedatangan          = $request->kedatangan_kp;
 
-        $jawatan->save();
+        dd($project);
+        $project->save();
 
         return redirect()->action('KemaskiniController@store')->withMessage('Post has been successfully added');
     }
+
+    public function simpan(Request $request , $id)
+    {
+        $project = new Project;
+        $project->suggest_id          = Suggest::findOrFail($id);
+        $project->user_id             = $request->nama_kp;
+        $project->jawatan_id          = $request->kp;
+        $project->kedatangan          = $request->kedatangan_kp;
+        $project->suggest_id          = Suggest::findOrFail($id);
+        $project->user_id             = $request->nama_tkp;
+        $project->jawatan_id          = $request->tkp;
+        $project->kedatangan          = $request->kedatangan_tkp;
+        $project->suggest_id          = Suggest::findOrFail($id);
+        $project->user_id             = $request->nama_bendahari;
+        $project->jawatan_id          = $request->kp;
+        $project->kedatangan          = $request->kedatangan_kp;
+
+        dd($project);
+        $project->save();
+
+        return redirect()->action('KemaskiniController@store')->withMessage('Post has been successfully added');
+    }
+
+
 
     /**
      * Display the specified resource.

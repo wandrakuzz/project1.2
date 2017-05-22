@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     //
+    protected $fillable = [
+        'suggest_id', 'user_id', 'jawatan_id','kedatangan'
+    ];
+
+
+
 
     public function user()
     {

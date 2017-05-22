@@ -50,12 +50,12 @@ class SuggestController extends Controller
     {
 
         $suggest = new Suggest;
-        $suggest->activity_name = $request->activity_name;
+        $suggest->activity_name       = $request->activity_name;
         $suggest->activity_date_start = $request->activity_date_start;
-        $suggest->activity_date_end = $request->activity_date_end;
+        $suggest->activity_date_end   = $request->activity_date_end;
         $suggest->activity_time_start = $request->activity_time_start;
-        $suggest->activity_time_end = $request->activity_time_end;
-        $suggest->activity_summary = $request->activity_summary;
+        $suggest->activity_time_end   = $request->activity_time_end;
+        $suggest->activity_summary    = $request->activity_summary;
         $suggest->user_id = Auth::id();
 
         $suggest->save();
