@@ -5,10 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Sistem Maklumat SIG</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+        <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bootstrap/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+        <link href="{{ asset('bootstrap/css/animate.css') }}" rel="stylesheet">
+        <link href="{{ asset('bootstrap/css/style.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -19,6 +24,7 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+
             }
 
             .full-height {
@@ -78,8 +84,9 @@
             @endif
 
             <div class="content">
+                <img src="images/img/sig5.jpg" alt="" width="600px" height="250px">
                 <div class="title m-b-md">
-                    Sistem Maklumat SIG
+                    <b>Sistem Maklumat SIG</b>
                 </div>
 
                 <div class="links">
@@ -88,5 +95,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>

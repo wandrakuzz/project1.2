@@ -74,14 +74,12 @@ Route::group(['middleware' => ['auth']],function(){
   });
 
 
+  Route::get('download','DownloadController@getExcel');
+
+
 });
 
   Route::resource('/admin','AdminController');
   Route::get('/page','AdminController@front');
-
-  Route::get('download','DownloadController@getExcel');
-
-
-
 
 Route::get('muat-turun/{id}', 'DownloadController@download')->name('download');

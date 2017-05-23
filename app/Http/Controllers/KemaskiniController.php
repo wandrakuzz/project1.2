@@ -77,6 +77,7 @@ class KemaskiniController extends Controller
         $project->user_id             = $request->nama_kp;
         $project->jawatan_id          = $request->kp;
         $project->kedatangan          = $request->kedatangan_kp;
+        $project->kedatangan          = $request->kedatangan_kp;
         $project->suggest_id          = Suggest::findOrFail($id);
         $project->user_id             = $request->nama_tkp;
         $project->jawatan_id          = $request->tkp;

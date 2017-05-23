@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('matric_no')->unique();
             $table->unsignedInteger('kelab_id')->index();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
             $table->enum('user_group', ['admin','penasihat','pelajar'])->default('pelajar');
             $table->string('alasan')->nullable();

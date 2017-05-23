@@ -15,66 +15,66 @@ class UserSeeder extends Seeder
 
       $data = [
         [
-          'name'        => 'kamal',
+          'name'        => 'Dr Suhaila',
           'matric_no'   => 'A148649',
           'kelab_id'    => '1',
-          'email'       => 'kamal@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'penasihat',
         ],
         [
-          'name'        => 'karim',
+          'name'        => 'Azwan',
           'matric_no'   => 'A148650',
           'kelab_id'    => '1',
-          'email'       => 'karim@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
         ],
         [
-          'name'        => 'chot',
+          'name'        => 'Atifah',
           'matric_no'   => 'A148651',
           'kelab_id'    => '1',
-          'email'       => 'chot@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
         ],
         [
-          'name'        => 'khai',
+          'name'        => 'Norfayanis',
           'matric_no'   => 'A148652',
           'kelab_id'    => '1',
-          'email'       => 'khai@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
         ],
         [
-          'name'        => 'mukmin',
+          'name'        => 'Laila',
           'matric_no'   => 'A148653',
           'kelab_id'    => '1',
-          'email'       => 'mukmin@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
         ],
         [
-          'name'        => 'padei',
+          'name'        => 'Nik',
           'matric_no'   => 'A148654',
           'kelab_id'    => '1',
-          'email'       => 'padei@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
         ],
         [
-          'name'        => 'amin',
+          'name'        => 'Zatty',
           'matric_no'   => 'A148655',
           'kelab_id'    => '1',
-          'email'       => 'amin@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
         ],
         [
-          'name'        => 'jun',
+          'name'        => 'Noorazlin',
           'matric_no'   => 'A148656',
           'kelab_id'    => '1',
-          'email'       => 'jun@gmail.com',
+          'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
         ]
@@ -83,9 +83,11 @@ class UserSeeder extends Seeder
       foreach ($data as $datum) {
         $user = User::create($datum);
 
-        $user->profile()->create([
-          'user_id' => $user->id
-        ]);
+        // $user->profile()->create([
+        //   'user_id' => $user->id,
+        //
+        //
+        // ]);
       }
 
 
