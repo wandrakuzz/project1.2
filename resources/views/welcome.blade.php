@@ -24,6 +24,8 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                background-image: url("images/img/background.jpg");
+                background-attachment: fixed;
 
             }
 
@@ -56,7 +58,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #FFFFFF;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -67,6 +69,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: #FFFFFF;
             }
         </style>
     </head>
