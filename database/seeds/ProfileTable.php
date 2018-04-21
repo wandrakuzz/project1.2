@@ -20,7 +20,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Computer Science (CS)',
             'tahun'       => '1',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
           [
               'user_id'   => '2',
@@ -29,7 +29,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Software Engineering Information System (SEIS)',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
           [
               'user_id'   => '3',
@@ -38,7 +38,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Computer Science (CS)',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
           [
               'user_id'   => '4',
@@ -47,7 +47,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Information Technology (TM)',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
           [
               'user_id'   => '5',
@@ -56,7 +56,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Information Technology (TM)',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
           [
               'user_id'   => '6',
@@ -65,7 +65,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Information Technology (TM)',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
           [
               'user_id'   => '7',
@@ -74,7 +74,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Software Engineering Information System (SEIS)',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
           [
               'user_id'   => '8',
@@ -83,7 +83,7 @@ class ProfileTable extends Seeder
             'kursus'      => 'Software Engineering Multimedia (SEMM)',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => null,
+            'picture'     => 'images/img/default_picture.png',
           ],
         ];
 

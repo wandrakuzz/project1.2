@@ -21,7 +21,7 @@ class CreateProfilesTable extends Migration
             $table->string('kursus')->nullable();
             $table->integer('tahun')->nullable();
             $table->string('no_tel')->nullable();
-            $table->string('picture')->nullable();
+            $table->string('picture')->default('public/images/img/default_picture.png')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

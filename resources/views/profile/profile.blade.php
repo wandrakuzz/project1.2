@@ -15,13 +15,13 @@
 <div class="panel-body">
   <div class="row">
     <div class="col-md-3 col-lg-3 " align="center">
-      <img class="image-placeholder img-circle-profile" src="{{ $users[0]->profile->picture }}" style="width: 100px; height: 100px"/>
+      <img class="image-placeholder img-circle-profile" src="{{ $user->profile->picture }}" style="width: 100px; height: 100px"/>
     </div>
 
     <div class=" col-md-9 col-lg-9 ">
       <table class="table table-user-information">
         <tbody>
-          @foreach ($users as $user)
+
           <tr>
             <td>Nama :</td>
             <td>{{ $user->name }}</td>
@@ -58,7 +58,7 @@
             <td>No Telefon</td>
             <td>{{ $user->profile->no_tel }}</td>
           </tr>
-          @endforeach
+
         </tbody>
       </table>
       @if( $user->id == Auth::user()->id)
@@ -78,4 +78,4 @@
 </div>
 </div>
 </div>
-@stop
+@endsection

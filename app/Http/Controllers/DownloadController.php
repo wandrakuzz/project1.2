@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PHPExcel_Style_Fill;
 use App\Suggest;
 use App\User;
 use Storage;
@@ -25,17 +26,18 @@ class DownloadController extends Controller
         return response()->download(public_path($download));
      }
 
-     
+
 
      public function getExcel()
      {
          $lists = DB::table('users')
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
+            ->where('user_group','pelajar')
             ->select('users.*','profiles.*')
             ->get();
 
             foreach($lists as $list) {
-                 $data[] = array(
+                 $data[] = [
                     $list->nama_penuh,
                     $list->matric_no,
                     $list->email,
@@ -43,7 +45,7 @@ class DownloadController extends Controller
                     $list->kursus,
                     $list->tahun,
                     $list->no_tel,
-                );
+                ];
             }
             // dd($data);
             Excel::create('List',function($excel) use($data){
@@ -52,9 +54,11 @@ class DownloadController extends Controller
                     $sheet->fromArray($data,null, 'A1', false, false);
                     $headings = array('Nama', 'No Matrik', 'Email', 'Jantina', 'Kursus', 'Tahun','No Telefon');
                     $sheet->prependRow(1, $headings);
+                    
                 });
             })->export('xlsx');
 
+            return back();
 
         }
 

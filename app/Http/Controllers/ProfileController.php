@@ -17,9 +17,9 @@ class ProfileController extends Controller
     public function index()
     {
         //
-        $users = User::where('id',Auth::user()->id)->with('profile','kelab')->get();
+        $user = User::where('id',Auth::user()->id)->with('profile','kelab')->first();
 
-        return view ('profile.profile', compact('users'));
+        return view ('profile.profile', compact('user'));
     }
 
     /**
@@ -62,9 +62,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
         //$users = User::findOrFail($id);
-        $user = User::where('id',Auth::user()->id)->with('profile','kelab')->get();
+        $user = User::where('id',$id)->with('profile','kelab')->first();
         return view('profile.profileform', compact('user'));
     }
 
@@ -95,7 +94,7 @@ class ProfileController extends Controller
           $profile->kursus     = $request->kursus;
           $profile->no_tel     = $request->no_tel;
           $profile->picture    = $request->picture;
-          
+
 
           if ($request->hasFile('picture'))
         {
