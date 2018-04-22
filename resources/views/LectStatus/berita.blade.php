@@ -9,50 +9,73 @@
     <div class="col-sm-12">
         <div class="row">
             <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">{{ Auth::user()->kelab->name }}</span>
+                        <h5>Jumlah Ahli SIG</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">{{ $membersig->count() }}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <span class="label label-success pull-right">Monthly</span>
-                                <h5>Income</h5>
+                                <span class="label label-success pull-right">SIG FTSM</span>
+                                <h5>Jumlah SIG</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">40 886,200</h1>
-                                <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                                <small>Total income</small>
+                                <h1 class="no-margins">{{ $sigs->count() }}</h1>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <span class="label label-info pull-right">Annual</span>
-                                <h5>Orders</h5>
+                                <span class="label label-info pull-right">Ahli Berdaftar</span>
+                                <h5>Jumlah Kesemua Ahli SIG</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">275,800</h1>
-                                <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                                <small>New orders</small>
+                                <h1 class="no-margins">{{ $members->count() }}</h1>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-info pull-right">Annual</span>
-                                <h5>Orders</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins">275,800</h1>
-                                <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                                <small>New orders</small>
-                            </div>
-                        </div>
-                    </div>
+
         </div>
         <div class="row">
-                <div class="col-lg-6">
+            <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        {{-- <span class="label label-info pull-right">Ahli Berdaftar</span> --}}
+                        <h5>Nama Ahli</h5>
+                    </div>
+                    <div class="ibox-content">
+                            <table class="table table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Tahun</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($membersig as $member)
+                                    <tr>
+                                        <td>{{ $loop->iteration}}</td>
+                                        <td>{{ $member->profile->nama_penuh }}</td>
+                                        <td>{{ $member->profile->tahun }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-8">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Polar Area</h5>
+                            <h5>Jumlah Ahli Mengikut Tahun</h5>
                         </div>
                         <div class="ibox-content">
                             <div class="text-center">
@@ -72,7 +95,7 @@
         var ctx = $('#tahun-chart');
 
         var myChart = new Chart(ctx, {
-            type: 'polarArea',
+            type: 'pie',
             data: {
                 labels: [
                     @foreach($tahun as $item)

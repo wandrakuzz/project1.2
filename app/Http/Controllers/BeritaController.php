@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Berita;
+use App\User;
+use App\Kelab;
 use DB;
+use Auth;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -15,9 +18,18 @@ class BeritaController extends Controller
      */
     public function index()
     {
-          $tahun = DB::table('profiles')->selectRaw('tahun, count(*) as count')->groupBy('tahun')->get();
+          $tahun = DB::table('profiles')
+          ->leftJoin('users', 'users.id', '=', 'profiles.user_id')
+          ->where('kelab_id',Auth::user()->kelab_id)
+          ->selectRaw('tahun, count(*) as count')
+          ->groupBy('tahun')
+          ->get();
 
-          return view('LectStatus.berita', compact('tahun'));
+          $sigs = Kelab::get();
+          $members = User::get();
+          $membersig = User::with('profile')->where('kelab_id',Auth::user()->kelab_id)->get();
+
+          return view('LectStatus.berita', compact('tahun','sigs','members','membersig'));
     }
 
 
@@ -86,4 +98,5 @@ class BeritaController extends Controller
     {
         //
     }
+
 }
