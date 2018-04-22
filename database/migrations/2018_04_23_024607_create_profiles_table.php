@@ -15,16 +15,17 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->index();
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('kursus_id');
             $table->string('nama_penuh')->nullable();
-            $table->string('gender')->nullable();
-            $table->string('kursus')->nullable();
-            $table->integer('tahun')->nullable();
+            $table->enum('gender',['Lelaki','Perempuan'])->nullable();
+            $table->string('tahun')->nullable();
             $table->string('no_tel')->nullable();
-            $table->string('picture')->default('public/images/img/default_picture.png')->nullable();
+            $table->string('picture')->default('images/img/default_picture.png');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('kursus_id')->references('id')->on('kursuses')->onUpdate('cascade');
         });
     }
 

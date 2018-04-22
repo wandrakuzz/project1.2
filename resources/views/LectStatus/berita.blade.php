@@ -51,7 +51,7 @@
                         <h5>Nama Ahli</h5>
                     </div>
                     <div class="ibox-content">
-                            <table class="table table-fixed">
+                            <table class="table table-fixed" style="display:block;height:310px;overflow-y:auto;">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -91,9 +91,7 @@
 @section('scripts')
 <script>
     $(function () {
-
         var ctx = $('#tahun-chart');
-
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -122,7 +120,6 @@
                 }]
             }
         });
-
     });
 </script>
 @endsection

@@ -3,11 +3,6 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
-        <div class="tabs-container">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#tab-1">Profile Registration</a></li>
-                </ul>
-                <div class="tab-content">
 
                   <!-- Start of first tab -->
                     <div id="tab-1" class="tab-pane active">
@@ -24,7 +19,7 @@
                                 <div class="panel-body text-center">
                                   <input type="file" name="picture" id="fileUpload" class="hide">
                                   <label for="fileUpload">
-                                      <img class="image-placeholder img-circle-profile" src="{{ asset('images/img/default_picture.png') }}" style="width: 200px; height: 200px"/>
+                                      <img class="image-placeholder img-circle-profile" src="{{ $user->profile->picture }}" style="width: 200px; height: 200px"/>
                                     </label>
                                     <div class="form-group"><label class="col-sm-2 control-label">Nama :</label>
                                         <div class="col-sm-10">
@@ -57,10 +52,9 @@
                                         <div class="col-sm-10">
                                             <select class="form-control" name="kursus">
                                                 <option disabled selected>Sila Pilih</option>
-                                                <option value="Computer Science (CS)">Computer Science (CS)</option>
-                                                <option value="Information Technology (TM)">Information Technology (TM)</option>
-                                                <option value="Software Engineering Information System (SEIS)">Software Engineering Information System (SEIS)</option>
-                                                <option value="Software Engineering Multimedia (SEMM)">Software Engineering Multimedia (SEMM)</option>
+                                                @foreach ($courses as $kursus)
+                                                    <option value="{{ $kursus->id }}"{{ ($user->profile->kursus_id == $kursus->id) ? 'selected' : '' }}>{{ $kursus->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -101,7 +95,6 @@
                     <!-- End of first tab -->
 
                   </div>
-                </div>
               </div>
 
 

@@ -58,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('/berita') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
+                        <a href="{{ url('/berita') }}"><i class="fa fa-bank"></i> <span class="nav-label">Dashboard</span></a>
                     </li>
                     <li>
                         <a href="{{ url('/suggest') }}"><i class="fa fa-pencil"></i> <span class="nav-label">Cadangan Aktiviti</span></a>
@@ -101,7 +101,7 @@
                             IN+
                         </div>
                         <li>
-                            <a href="{{ url('/berita') }}"><i class="fa fa-bank"></i> <span class="nav-label">Berita SIG</span></a>
+                            <a href="{{ url('/berita') }}"><i class="fa fa-bank"></i> <span class="nav-label">Dashboard</span></a>
                         </li>
                         <li>
                             <a href="{{ url('/semak') }}"><i class="fa fa-bank"></i> <span class="nav-label">Semak Cadangan</span></a>

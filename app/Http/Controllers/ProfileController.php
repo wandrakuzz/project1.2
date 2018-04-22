@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Profile;
 use App\User;
 use Auth;
+use App\Kursus;
 
 class ProfileController extends Controller
 {
@@ -64,7 +66,8 @@ class ProfileController extends Controller
     {
         //$users = User::findOrFail($id);
         $user = User::where('id',$id)->with('profile','kelab')->first();
-        return view('profile.profileform', compact('user'));
+        $courses = Kursus::get();
+        return view('profile.profileform', compact('user','courses'));
     }
 
     /**
@@ -76,7 +79,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
         // $this->validate($request, ['post_content' => 'required',]);
 
           // dd($request->all());
@@ -91,16 +94,16 @@ class ProfileController extends Controller
           $profile->gender     = $request->gender;
           $profile->nama_penuh = $request->nama_penuh;
           $profile->tahun      = $request->tahun;
-          $profile->kursus     = $request->kursus;
+          $profile->kursus_id  = $request->kursus;
           $profile->no_tel     = $request->no_tel;
-          $profile->picture    = $request->picture;
+          // $profile->picture    = $request->picture;
 
 
           if ($request->hasFile('picture'))
         {
 
             $this->validate($request, [
-                'picture' => 'required|image'
+                'picture' => 'required|image',Rule::unique('profiles')->ignore($profile->id)
             ]);
 
             $image = '/storage/profile/profile_' . time() . $user->id . '.' . $request->picture->getClientOriginalExtension();

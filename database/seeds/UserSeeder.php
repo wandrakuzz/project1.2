@@ -12,8 +12,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
-      $data = [
+        $data = [
         [
           'name'        => 'Dr Suhaila',
           'matric_no'   => 'A148649',
@@ -77,19 +76,49 @@ class UserSeeder extends Seeder
           'email'       => 'A148647@siswa.ukm.edu.my',
           'password'    => bcrypt('wan123'),
           'user_group'  => 'pelajar',
-        ]
+        ],
+        [
+          'name'        => 'Dayana Intan',
+          'matric_no'   => 'A148657',
+          'kelab_id'    => '2',
+          'email'       => 'A148647@siswa.ukm.edu.my',
+          'password'    => bcrypt('wan123'),
+          'user_group'  => 'pelajar',
+        ],
+        [
+            'name'        => 'Ridhwan Rani',
+            'matric_no'   => 'A148658',
+            'kelab_id'    => '2',
+            'email'       => 'A148647@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+         ],
+         [
+            'name'        => 'Amira Rashidi',
+            'matric_no'   => 'A148659',
+            'kelab_id'    => '2',
+            'email'       => 'A148647@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+        ],
+        [
+           'name'        => 'Syafiq Yazan',
+           'matric_no'   => 'A148660',
+           'kelab_id'    => '2',
+           'email'       => 'A148647@siswa.ukm.edu.my',
+           'password'    => bcrypt('wan123'),
+           'user_group'  => 'pelajar',
+         ]
       ];
 
-      foreach ($data as $datum) {
-        $user = User::create($datum);
+        foreach ($data as $datum) {
+            $user = User::create($datum);
 
-        // $user->profile()->create([
+            // $user->profile()->create([
         //   'user_id' => $user->id,
         //
         //
         // ]);
-      }
-
-
+        }
     }
 }

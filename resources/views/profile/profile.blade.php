@@ -44,7 +44,7 @@
           </tr>
           <tr>
             <td>Kursus</td>
-            <td>{{ $user->profile->kursus }}</td>
+            <td>{{ $user->profile->kursus->name }}</td>
           </tr>
           <tr>
             <td>Tahun:</td>

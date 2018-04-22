@@ -25,9 +25,13 @@ class BeritaController extends Controller
           ->groupBy('tahun')
           ->get();
 
+          $membersig = User::with('profile')
+          ->where('kelab_id',Auth::user()->kelab_id)
+          ->where('user_group','pelajar')
+          ->get();
+
           $sigs = Kelab::get();
-          $members = User::get();
-          $membersig = User::with('profile')->where('kelab_id',Auth::user()->kelab_id)->get();
+          $members = User::where('user_group','pelajar')->get();
 
           return view('LectStatus.berita', compact('tahun','sigs','members','membersig'));
     }

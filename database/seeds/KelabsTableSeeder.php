@@ -14,7 +14,12 @@ class KelabsTableSeeder extends Seeder
     {
         $data = [
           'Cyberethic',
-          'Numoss'
+          'Numoss',
+          'Robotics',
+          'Mobile Apps Development (MAD)',
+          'Interactive Multimedia',
+          'Programming Challenge',
+          'Lensa Informatic'
         ];
 
         foreach ($data as $item) {
