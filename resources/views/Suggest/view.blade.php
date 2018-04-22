@@ -8,7 +8,7 @@
       <a href="{{ action ('SuggestController@create')}}" class="btn btn-primary pull-right" >Cadang Aktiviti</a>
 
 
-          <table class="table table-striped">
+          <table class="table table-bordered">
               <thead>
               <tr>
                   <th>No</th>
@@ -33,15 +33,15 @@
                   <td>{{ $suggest->activity_summary or '' }}</input></td>
                   <td>{{ $suggest->created_at->diffForHumans() }}</td>
                   <td>
-                    <button class="btn @if($suggest->status=='rejected') btn-danger
-                      @elseif ($suggest->status=='approved') btn-success
-                      @else btn-info
+                      <span class="label @if($suggest->status=='rejected') label-danger
+                      @elseif ($suggest->status=='approved') label-success
+                      @else label-info
                       @endif">
                       @if($suggest->status=='rejected') Ditolak
                       @elseif ($suggest->status=='approved') Diterima
                       @else Pending
                       @endif
-                    </button>
+                      </span>
                   </td>
               </tr>
 

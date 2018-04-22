@@ -147,24 +147,21 @@
             <!-- End Header -->
 
             <div class="row">
-
-
-
-
-
               <div class="col-lg-12">
-                  <div class="ibox float-e-margins">
+                  <div class="wrapper wrapper-content">
+                      @yield('content')
+                  </div>
+
+                  {{-- <div class="ibox float-e-margins">
                       <div class="ibox-title">
                           <h5>@yield('page-title')</h5>
-
                       </div>
                       <div class="ibox-content">
                           <div class="row">
-
                                 @yield('content')
                           </div>
                       </div>
-                  </div>
+                  </div> --}}
               </div>
 
             </div>

@@ -103,8 +103,8 @@ class ProfileController extends Controller
                 'picture' => 'required|image'
             ]);
 
-            $image = '/images/profile/profile_' . time() . $user->id . '.' . $request->picture->getClientOriginalExtension();
-            $request->picture->move(public_path('images/profile/'), $image);
+            $image = '/storage/profile/profile_' . time() . $user->id . '.' . $request->picture->getClientOriginalExtension();
+            $request->picture->move(public_path('storage/profile/'), $image);
             $profile->picture = $image;
         }
 
