@@ -43,7 +43,7 @@
                                  </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
-                                </span> <span class="text-muted text-xs block">SEIS <b class="caret"></b></span> </span> </a>
+                                </span> <span class="text-muted text-xs block">{{ Auth::user()->profile->kursus->abbrv }}<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
@@ -88,7 +88,7 @@
                                  </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
-                                </span> <span class="text-muted text-xs block">SEIS <b class="caret"></b></span> </span> </a>
+                                </span> <span class="text-muted text-xs block">{{ Auth::user()->profile->kursus->abbrv }}<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
@@ -115,6 +115,10 @@
                         <li>
                             <a href="{{ url('/senarai-pelajar') }}"><i class="fa fa-group"></i> <span class="nav-label">Senarai Ahli</span></a>
                         </li>
+                        <li>
+                            <a href="{{ url('/profile') }}"><i class="fa fa-group"></i> <span class="nav-label">Kemaskini Maklumat Diri</span></a>
+                        </li>
+
                 </ul>
             </div>
         </nav>
