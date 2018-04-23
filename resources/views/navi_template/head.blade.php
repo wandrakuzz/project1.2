@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{{ asset('images/img/favicon.ico') }}"/>
 
         <title>{{ config('app.name', 'Laman Pelajar') }}</title>
 
@@ -43,7 +44,7 @@
                                  </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
-                                </span> <span class="text-muted text-xs block">{{ Auth::user()->profile->kursus->abbrv }}<b class="caret"></b></span> </span> </a>
+                                </span> <span class="text-muted text-xs block">Test<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
@@ -88,7 +89,7 @@
                                  </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
-                                </span> <span class="text-muted text-xs block">{{ Auth::user()->profile->kursus->abbrv }}<b class="caret"></b></span> </span> </a>
+                                </span> <span class="text-muted text-xs block">Test<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
