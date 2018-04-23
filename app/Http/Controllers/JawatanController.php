@@ -26,7 +26,7 @@ class JawatanController extends Controller
     public function create()
     {
 
-    
+
     }
 
     /**
@@ -54,7 +54,7 @@ class JawatanController extends Controller
 
         $jawatan->save();
 
-        return redirect()->
+        return back();
     }
 
     /**

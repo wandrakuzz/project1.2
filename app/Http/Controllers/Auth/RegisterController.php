@@ -52,7 +52,7 @@ class RegisterController extends Controller
         return view('auth.register', compact('kelabs'));
     }
 
-    
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -79,7 +79,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-      // dd($data);
+      dd($data);
       $user = User::create([
           'name' => $data['name'],
           'matric_no' => $data['matric_no'],
@@ -95,7 +95,7 @@ class RegisterController extends Controller
       'nama_penuh' => null,
       'gender' => null,
       'tahun'  => null,
-      'kursus' => null,
+      'kursus_id' => null,
       'no_tel' => null,
       'picture' => '/images/img/default_picture.png',
 

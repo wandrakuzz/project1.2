@@ -1,5 +1,6 @@
 <?php
-
+use App\Kelab;
+use App\Kursus;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $kelabs = Kelab::get();
+    $kursuses = Kursus::get();
+    return view('auth.login',compact('kelabs','kursuses'));
 });
 
 Auth::routes();

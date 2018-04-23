@@ -1,68 +1,63 @@
-@extends('layouts.app')
+@extends('auth.headlogin')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('matric_no') ? ' has-error' : '' }}">
-                            <label for="matric_no" class="col-md-4 control-label">Matric Number</label>
-
-                            <div class="col-md-6">
-                                <input id="matric_no" type="matric_no" class="form-control" name="matric_no" value="{{ old('matric_no') }}" required autofocus>
-
-                                @if ($errors->has('matric_no'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('matric_no') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <form class="login100-form validate-form" role="form" method="POST" action="{{ route('login') }}">
+          {{ csrf_field() }}
+          <div class="" style="padding-bottom:100px;text-align:center;">
+              <h1>Selamat Datang ke Sistem Maklumat SIG</h1>
+          </div>
+        <span class="login100-form-title p-b-34">
+            Log Masuk Akaun
+        </span>
+        <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Sila isi Matric No">
+            <input id="first-name" class="input100" type="text" name="matric_no" value="{{ old('matric_no') }}" placeholder="Matric No">
+            @if ($errors->has('matric_no'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('matric_no') }}</strong>
+                </span>
+            @endif
+            <span class="focus-input100"></span>
         </div>
-    </div>
-</div>
+        <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Sila isi katalaluan">
+            <input class="input100" type="password" name="password" placeholder="Katalaluan">
+            @if ($errors->has('password'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('password') }}</strong>
+                  </span>
+              @endif
+            <span class="focus-input100"></span>
+        </div>
+
+
+            <div class="container-login100-form-btn">
+                <button type="submit" class="login100-form-btn">
+                    Masuk
+                </button>
+            </div>
+
+
+        <div class="w-full text-center p-t-27 p-b-239" style="padding-bottom:100px;">
+            <span class="txt1">
+                Lupa
+            </span>
+
+            <a href="#" class="txt2">
+                Email / Katalaluan?
+            </a>
+        </div>
+
+        <div class="w-full text-center">
+            <span class="txt1">
+                Tiada akaun?
+            </span>
+            <br>
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
+                Daftar Disini
+            </button>
+        </div>
+        </form>
+
+    <div class="login100-more" style="background-image: url('images/img/sig5.jpg');"></div>
+
+    @include('auth.register')
 @endsection
