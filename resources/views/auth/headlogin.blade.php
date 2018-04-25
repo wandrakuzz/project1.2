@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <title>Log Masuk</title>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 <link rel="icon" type="image/png" href="{{ asset('images/img/favicon.ico') }}"/>
@@ -18,17 +19,13 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
-
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-	               @yield('content')
-			</div>
-		</div>
-	</div>
-
+	   @yield('content')
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
