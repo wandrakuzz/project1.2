@@ -7,7 +7,7 @@
         <div class="panel-body">
             <div class="col-md-3">
                 <h4 class="font-weight-bold" style="font-size:20px;">Cipta cadangan aktiviti</h4>
-                <p class="text-muted">Cadangan aktiviti yang akan di jalankan bersama SIG. Aktiviti ini akan direkodkan.</p>
+                <p class="text-muted">Cadangan aktiviti yang akan di jalankan bersama SIG. Aktiviti ini akan direkodkan. Ruangan ini perlu diisi kesemuanya.</p>
             </div>
             <div class="col-md-9">
                 <form class="form-horizontal" action="{{ action('SuggestController@store') }}" method="POST">
