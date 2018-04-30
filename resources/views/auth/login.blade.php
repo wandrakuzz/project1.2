@@ -1,6 +1,9 @@
 @extends('auth.headlogin')
 
 @section('content')
+    <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
     <form class="login100-form validate-form" role="form" method="POST" action="{{ route('login') }}">
           {{ csrf_field() }}
           <div class="" style="padding-bottom:100px;text-align:center;">
@@ -51,13 +54,16 @@
                 Tiada akaun?
             </span>
             <br>
-            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
+            <a href="{{ route('register') }}" type="button" class="btn btn-outline-dark">
                 Daftar Disini
-            </button>
+            </a>
         </div>
         </form>
+        <div class="login100-more" style="background-image: url('images/img/sig5-min.jpg');"></div>
+    </div>
+</div>
+</div>
 
-    <div class="login100-more" style="background-image: url('images/img/sig5.jpg');"></div>
 
-    @include('auth.register')
+
 @endsection
