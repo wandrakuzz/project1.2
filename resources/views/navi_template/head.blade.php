@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{{ asset('bootstrap/css/jquery-ui.css') }}">
         <link rel="stylesheet" href="{{ asset('bootstrap/css/jquery.dataTables.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bootstrap/css/jquery.timepicker.min.css') }}">
-
+        @yield('dashboard-style')
 
         <style type="text/css">
         .img-circle-profile {

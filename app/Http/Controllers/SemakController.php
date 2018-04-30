@@ -120,7 +120,7 @@ class SemakController extends Controller
     public function Senarai()
     {
       $senarais = User::with('profile')->where('user_group','pelajar')->get();
-
+      // dd($senarais->profile->kursus->name);
       return view('LectStatus.senarai-pelajar',compact('senarais'));
     }
 }
