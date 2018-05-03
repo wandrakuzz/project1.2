@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth']],function(){
   // Pelajar Function
   Route::get('/index', 'HomeController@index');
   Route::resource('/suggest', 'SuggestController');
-  Route::resource('/suggestview', 'SuggestController');
+  // Route::resource('/suggestview', 'SuggestController');
   Route::resource('/verify', 'VerifyController');
   Route::resource('/profile', 'ProfileController');
 

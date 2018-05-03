@@ -8,7 +8,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1>Cadang Aktiviti</h1>
+            <h2>Senarai cadangan aktiviti</h2>
         </div>
         <div class="panel-body">
              <a href="{{ action ('SuggestController@create')}}" class="mb-5 btn btn-success" style="margin-bottom:10px;">Cadang Aktiviti</a>
@@ -22,9 +22,9 @@
                          <th>Nama Aktiviti</th>
                          <th>Tarikh</th>
                          <th>Ringkasan</th>
-                         <th>Cipta</th>
                          <th>Status</th>
-
+                         <th>Cipta</th>
+                         <th>Tindakan</th>
                      </tr>
                      </thead>
                      <tbody>
@@ -34,9 +34,8 @@
                          <td>{{ $suggest->user->name or '' }}</td>
                          <td>{{ $suggest->user->matric_no or '' }}</td>
                          <td>{{ $suggest->activity_name or '' }}</input></td>
-                         <td>{{ $suggest->activity_time_start or '' }}</input></td>
+                         <td>{{ $suggest->activity_date_start or '' }}</input></td>
                          <td>{{ $suggest->activity_summary or '' }}</input></td>
-                         <td>{{ $suggest->created_at->diffForHumans() }}</td>
                          <td>
                              <span class="label @if($suggest->status=='rejected') label-danger
                              @elseif ($suggest->status=='approved') label-success
@@ -47,6 +46,16 @@
                              @else Pending
                              @endif
                              </span>
+                         </td>
+                         <td>{{ $suggest->created_at->diffForHumans() }}</td>
+                         <td>
+                             <form class="" action="{{route('suggest.destroy',$suggest->id)}}" method="post">
+                                 @csrf
+                                 @method('DELETE')
+                             <a href="{{ route('suggest.show',$suggest->id)}}"><button type="button" class="btn btn-success btn-xs" name="button">Butiran</button></a>
+                             <a href="{{ route('suggest.edit',$suggest->id)}}"><button type="button" class="btn btn-warning btn-xs" name="button">Kemaskini</button></a>
+                             <button type="submit" class="btn btn-danger btn-xs" name="button">Buang</button>
+                             </form>
                          </td>
                      </tr>
 
@@ -62,7 +71,6 @@
         </div>
       </div>
   </div>
-
 
 @endsection
 

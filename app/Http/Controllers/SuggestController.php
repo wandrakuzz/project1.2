@@ -8,6 +8,7 @@ use App\Verify;
 use App\Profile;
 use Auth;
 use App\User;
+use Carbon\Carbon;
 
 
 class SuggestController extends Controller
@@ -19,14 +20,8 @@ class SuggestController extends Controller
      */
     public function index()
     {
-        // $profiles = Profile::where('user_id',Auth::user()->id)->get();
-        // dd($profiles);
-        //$suggests = Suggest::findOrfail(Auth::user()->id)->with('user')->get();
-
-         $suggests = Suggest::where('user_id',Auth::id())->get();
-
-
-        return view('Suggest.view',compact('suggests'));
+         $suggests = Suggest::where('user_id',Auth::id())->latest()->get();
+         return view('Suggest.view',compact('suggests'));
     }
 
     /**
@@ -76,10 +71,12 @@ class SuggestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($users)
+    public function show($id)
     {
-        //
 
+        $cadang = Suggest::where('user_id',Auth::user()->id)->find($id);
+
+        return view('Suggest.show',compact('cadang'));
     }
 
     /**
@@ -90,7 +87,8 @@ class SuggestController extends Controller
      */
     public function edit($id)
     {
-        //
+        $suggest = Suggest::find($id);
+        return view('Suggest.edit',compact('suggest'));
     }
 
     /**
@@ -102,7 +100,19 @@ class SuggestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $suggest = Suggest::where('user_id',Auth::user()->id)->find($id);
+
+        $suggest->update([
+            'activity_name'         => $request->activity_name,
+            'activity_date_start'   => $request->activity_date_start,
+            'activity_date_end'     => $request->activity_date_end,
+            'activity_time_start'   => $request->activity_time_start,
+            'activity_time_end'     => $request->activity_time_end,
+            'activity_summary'      => $request->activity_summary,
+            'user_id'               => Auth::id()
+        ]);
+
+        return redirect()->route('suggest.index');
     }
 
     /**
@@ -113,6 +123,9 @@ class SuggestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $suggest = Suggest::where('user_id',Auth::id())->find($id);
+        $suggest->delete();
+
+        return back();
     }
 }
