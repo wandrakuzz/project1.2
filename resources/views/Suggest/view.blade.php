@@ -52,6 +52,7 @@
                              <form class="" action="{{route('suggest.destroy',$suggest->id)}}" method="post">
                                  @csrf
                                  @method('DELETE')
+                            
                              <a href="{{ route('suggest.show',$suggest->id)}}"><button type="button" class="btn btn-success btn-xs" name="button">Butiran</button></a>
                              <a href="{{ route('suggest.edit',$suggest->id)}}"><button type="button" class="btn btn-warning btn-xs" name="button">Kemaskini</button></a>
                              <button type="submit" class="btn btn-danger btn-xs" name="button">Buang</button>

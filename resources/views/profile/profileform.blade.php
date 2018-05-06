@@ -7,12 +7,9 @@
                   <!-- Start of first tab -->
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
-
                             <form class="form-horizontal" action="{{ action ('ProfileController@update' , $user->id) }}" method="POST" enctype="multipart/form-data">
-
                               {{ csrf_field() }}
                               {{ method_field('PATCH') }}
-
 
                               <div class="panel panel-default" style="border-bottom: 0px; box-shadow: none;">
                                 <div class="panel-heading">Profile Picture</div>
