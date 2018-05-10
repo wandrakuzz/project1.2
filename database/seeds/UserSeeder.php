@@ -109,6 +109,17 @@ class UserSeeder extends Seeder
             'password'    => bcrypt('wan123'),
             'user_group'  => 'pelajar',
         ],
+
+        [
+            'name'        => 'aliff',
+            'matric_no'   => 'A144444',
+            'kelab_id'    => '2',
+            'email'       => 'A144444@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+        ],
+
+
         [
            'name'        => 'Syafiq Yazan',
            'matric_no'   => 'A148660',
