@@ -14,6 +14,14 @@ class UserSeeder extends Seeder
     {
         $data = [
         [
+              'name'        => 'Admin',
+              'matric_no'   => 'A007',
+              'kelab_id'    => '1',
+              'email'       => 'admin@gmail.com',
+              'password'    => bcrypt('admin123'),
+              'user_group'  => 'admin',
+        ],
+        [
           'name'        => 'Dr Suhaila',
           'matric_no'   => 'A148649',
           'kelab_id'    => '1',

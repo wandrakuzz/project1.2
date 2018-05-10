@@ -18,32 +18,44 @@
 
         <h1>Pendaftaran Pengguna</h1>
     </div>
-    <form class="form-horizontal" action="{{ action('AdminController@store')}}" method="POST">
+    <form class="form-horizontal" action="{{ route('admin.store') }}" method="POST">
 
       {{ csrf_field() }}
 
       <div class="form-group">
         <label class="control-label col-sm-2">Name:</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Enter Name">
+          <input type="text" name="nama" class="form-control" placeholder="Enter Name">
         </div>
       </div>
+
       <div class="form-group">
         <label class="control-label col-sm-2">Matric No:</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Enter Matric No">
+          <input type="text" name="matric_no" class="form-control" placeholder="Enter Matric No">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2" for="email">Email:</label>
         <div class="col-sm-6">
-          <input type="email" class="form-control" id="email" placeholder="Enter email">
+          <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">Password:</label>
         <div class="col-sm-6">
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+          <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter password">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2">Kelab:</label>
+        <div class="col-sm-6">
+            <select class="form-control" name="kelab_id">
+                <option value="" disabled selected>Sila Pilih SIG</option>
+                    @foreach($kelabs as $kelab)
+                        <option value="{{ $kelab->id }}">{{ $kelab->name }}</option>
+                    @endforeach
+    		</select>
         </div>
       </div>
       <div class="form-group">
@@ -51,8 +63,8 @@
         <div class="col-sm-2">
           <select class="form-control col-sm-2" name="user_group">
             <option value="" disabled selected>Pilih role</option>
-            <option value="">Pelajar</option>
-            <option value="">Penasihat</option>
+            <option value="pelajar">Pelajar</option>
+            <option value="penasihat">Penasihat</option>
           </select>
         </div>
       </div>
