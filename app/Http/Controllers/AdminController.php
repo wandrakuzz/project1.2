@@ -18,9 +18,17 @@ class AdminController extends Controller
     public function index()
     {
         //
-        $users = User::with('profile','kelab')->paginate(10);
+        $pelajars = User::with('profile','kelab')
+        ->where('user_group','pelajar')
+        ->orderBy('user_group','asc')
+        ->paginate(10);
 
-        return view ('admin', compact('users'));
+        $penasihats = User::with('profile','kelab')
+        ->where('user_group','penasihat')
+        ->orderBy('user_group','asc')
+        ->paginate(10);
+
+        return view ('admin', compact('pelajars','penasihats'));
 
     }
 
@@ -31,8 +39,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.create');
+        $kelabs = Kelab::get();
+        return view('admin.create',compact('kelabs'));
 
     }
 
@@ -44,16 +52,25 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $user = new User;
 
-        $user->name = $request->name;
-        $user->matric_no = $request->matric_no;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->user_group = $request->role;
+        $user = User::create([
+            'name' => $request->nama,
+            'matric_no' => $request->matric_no,
+            'kelab_id' => $request->kelab_id,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'user_group'    => $request->user_group
+        ]);
 
-        $user->save();
+            $user->profile()->create([
+            'user_id' => $user->id,
+            'nama_penuh' => null,
+            'gender' => null,
+            'tahun'  => null,
+            'kursus_id' => null,
+            'no_tel' => null,
+            'picture' => '/images/img/default_picture.png',
+        ]);
 
         return redirect()->action('AdminController@store')->withMessage('Succesfull');
     }
