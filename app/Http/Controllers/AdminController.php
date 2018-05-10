@@ -10,6 +10,7 @@ use App\Kelab;
 
 class AdminController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -18,17 +19,6 @@ class AdminController extends Controller
     public function index()
     {
         //
-        $pelajars = User::with('profile','kelab')
-        ->where('user_group','pelajar')
-        ->orderBy('user_group','asc')
-        ->paginate(10);
-
-        $penasihats = User::with('profile','kelab')
-        ->where('user_group','penasihat')
-        ->orderBy('user_group','asc')
-        ->paginate(10);
-
-        return view ('admin', compact('pelajars','penasihats'));
 
     }
 

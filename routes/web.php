@@ -20,10 +20,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::group(['middleware' => ['auth']],function(){
- Route::resource('/admin','AdminController');
-
+    Route::resource('/admin','AdminController');
   // Pelajar Function
   Route::get('/index', 'HomeController@index');
   Route::resource('/suggest', 'SuggestController');
