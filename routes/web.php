@@ -22,7 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['auth']],function(){
-
+ Route::resource('/admin','AdminController');
 
   // Pelajar Function
   Route::get('/index', 'HomeController@index');
@@ -83,7 +83,7 @@ Route::group(['middleware' => ['auth']],function(){
 
 });
 
-  Route::resource('/admin','AdminController');
+
   Route::get('/page','AdminController@front');
 
 Route::get('muat-turun/{id}', 'DownloadController@download')->name('download');
