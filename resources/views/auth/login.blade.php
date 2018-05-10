@@ -6,7 +6,7 @@
 			<div class="wrap-login100">
     <form class="login100-form validate-form" role="form" method="POST" action="{{ route('login') }}">
           {{ csrf_field() }}
-          <div class="" style="padding-bottom:100px;text-align:center;">
+          <div class="" style="padding-bottom:70px;text-align:center;">
               <h1>Selamat Datang ke Sistem Maklumat SIG</h1>
           </div>
         <span class="login100-form-title p-b-34">
@@ -39,7 +39,7 @@
             </div>
 
 
-        <div class="w-full text-center p-t-27 p-b-239" style="padding-bottom:100px;">
+        <div class="w-full text-center p-t-27 p-b-239" style="padding-bottom:30px;">
             <span class="txt1">
                 Lupa
             </span>

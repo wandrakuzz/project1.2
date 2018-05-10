@@ -33,6 +33,7 @@ class DownloadController extends Controller
          $lists = DB::table('users')
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
             ->where('user_group','pelajar')
+            ->where('kelab_id',Auth::user()->kelab_id)
             ->select('users.*','profiles.*')
             ->get();
 
@@ -54,7 +55,7 @@ class DownloadController extends Controller
                     $sheet->fromArray($data,null, 'A1', false, false);
                     $headings = array('Nama', 'No Matrik', 'Email', 'Jantina', 'Kursus', 'Tahun','No Telefon');
                     $sheet->prependRow(1, $headings);
-                    
+
                 });
             })->export('xlsx');
 

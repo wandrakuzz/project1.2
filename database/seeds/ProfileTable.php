@@ -20,7 +20,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '1',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '2',
@@ -29,7 +29,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '3',
@@ -38,7 +38,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '4',
@@ -47,7 +47,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '5',
@@ -56,7 +56,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '6',
@@ -65,7 +65,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '7',
@@ -74,7 +74,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '8',
@@ -83,7 +83,7 @@ class ProfileTable extends Seeder
             'kursus_id'   => '1',
             'tahun'       => '3',
             'no_tel'      => '017-2672769',
-            'picture'     => 'images/img/default_picture.png',
+            'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '9',
@@ -92,7 +92,7 @@ class ProfileTable extends Seeder
               'kursus_id'   => '1',
               'tahun'       => '3',
               'no_tel'      => '017-2672769',
-              'picture'     => 'images/img/default_picture.png',
+              'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '10',
@@ -101,7 +101,7 @@ class ProfileTable extends Seeder
               'kursus_id'   => '1',
               'tahun'       => '3',
               'no_tel'      => '017-2672769',
-              'picture'     => 'images/img/default_picture.png',
+              'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '11',
@@ -110,7 +110,7 @@ class ProfileTable extends Seeder
               'kursus_id'   => '1',
               'tahun'       => '3',
               'no_tel'      => '017-2672769',
-              'picture'     => 'images/img/default_picture.png',
+              'picture'     => '/images/img/default_picture.png',
           ],
           [
               'user_id'   => '12',
@@ -119,7 +119,7 @@ class ProfileTable extends Seeder
               'kursus_id'   => '1',
               'tahun'       => '3',
               'no_tel'      => '017-2672769',
-              'picture'     => 'images/img/default_picture.png',
+              'picture'     => '/images/img/default_picture.png',
           ],
         ];
 
