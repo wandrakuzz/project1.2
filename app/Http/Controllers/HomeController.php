@@ -43,6 +43,20 @@ class HomeController extends Controller
         $sigs = Kelab::get();
         $members = User::where('user_group','pelajar')->get();
 
+
+        if (Auth::user()->user_group == 'admin') {
+            $pelajars = User::with('profile','kelab')
+            ->where('user_group','pelajar')
+            ->orderBy('user_group','asc')
+            ->paginate(10);
+
+            $penasihats = User::with('profile','kelab')
+            ->where('user_group','penasihat')
+            ->orderBy('user_group','asc')
+            ->paginate(10);
+
+            return view('admin',compact('pelajars','penasihats'));
+        }
         return view('LectStatus.berita', compact('tahun','sigs','members','membersig'));
     }
 

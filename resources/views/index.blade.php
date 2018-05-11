@@ -11,9 +11,11 @@
                 <div class="panel-body">
                    @if(\Auth::user()->user_group == 'pelajar')
                     @yield('home')
-                  @else
+                   @elseif(\Auth::user()->user_group == 'penasihat')
                     @yield('penasihat')
-                  @endif
+                   @else
+                    @yield('admin')
+                    @endif
                 </div>
             </div>
         </div>
