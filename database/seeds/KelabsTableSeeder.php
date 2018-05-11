@@ -19,7 +19,11 @@ class KelabsTableSeeder extends Seeder
           'Mobile Apps Development (MAD)',
           'Interactive Multimedia',
           'Programming Challenge',
-          'Lensa Informatic'
+          'Lensa Informatic',
+          'Video Innovation',
+          'iBusiness Innovative',
+          'Intelligent Machines',
+          'Imagine Cup',
         ];
 
         foreach ($data as $item) {
