@@ -29,6 +29,16 @@ class UserSeeder extends Seeder
           'password'    => bcrypt('wan123'),
           'user_group'  => 'penasihat',
         ],
+
+        [
+          'name'        => 'Dr Dian',
+          'matric_no'   => 'A101',
+          'kelab_id'    => '11',
+          'email'       => 'A101@siswa.ukm.edu.my',
+          'password'    => bcrypt('wan123'),
+          'user_group'  => 'penasihat',
+        ],
+
         [
           'name'        => 'Azwan',
           'matric_no'   => 'A148650',
@@ -86,6 +96,22 @@ class UserSeeder extends Seeder
           'user_group'  => 'pelajar',
         ],
         [
+          'name'        => 'Ali',
+          'matric_no'   => 'A123456',
+          'kelab_id'    => '1',
+          'email'       => 'A148647@siswa.ukm.edu.my',
+          'password'    => bcrypt('wan123'),
+          'user_group'  => 'pelajar',
+        ],
+        [
+          'name'        => 'Zulkarnain',
+          'matric_no'   => 'A123457',
+          'kelab_id'    => '1',
+          'email'       => 'A148647@siswa.ukm.edu.my',
+          'password'    => bcrypt('wan123'),
+          'user_group'  => 'pelajar',
+        ],
+        [
           'name'        => 'Dayana Intan',
           'matric_no'   => 'A148657',
           'kelab_id'    => '2',
@@ -111,14 +137,53 @@ class UserSeeder extends Seeder
         ],
 
         [
-            'name'        => 'aliff',
-            'matric_no'   => 'A144444',
+            'name'        => 'Abdullah Haziq',
+            'matric_no'   => 'A148661',
             'kelab_id'    => '2',
-            'email'       => 'A144444@siswa.ukm.edu.my',
+            'email'       => 'A148661@siswa.ukm.edu.my',
             'password'    => bcrypt('wan123'),
             'user_group'  => 'pelajar',
         ],
-
+        [
+            'name'        => 'Alif Muzakkir',
+            'matric_no'   => 'A148662',
+            'kelab_id'    => '2',
+            'email'       => 'A148662@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+        ],
+        [
+            'name'        => 'Anis Alisa',
+            'matric_no'   => 'A148663',
+            'kelab_id'    => '2',
+            'email'       => 'A148663@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+        ],
+        [
+            'name'        => 'Arif Irfan',
+            'matric_no'   => 'A148664',
+            'kelab_id'    => '2',
+            'email'       => 'A148664@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+        ],
+        [
+            'name'        => 'Emylia Ezora',
+            'matric_no'   => 'A148665',
+            'kelab_id'    => '2',
+            'email'       => 'A148665@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+        ],
+        [
+            'name'        => 'Farahiyah Aliya',
+            'matric_no'   => 'A148666',
+            'kelab_id'    => '2',
+            'email'       => 'A148666@siswa.ukm.edu.my',
+            'password'    => bcrypt('wan123'),
+            'user_group'  => 'pelajar',
+        ],
 
         [
            'name'        => 'Syafiq Yazan',
