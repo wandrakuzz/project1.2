@@ -21,6 +21,7 @@ class BeritaController extends Controller
           $tahun = DB::table('profiles')
           ->leftJoin('users', 'users.id', '=', 'profiles.user_id')
           ->where('kelab_id',Auth::user()->kelab_id)
+          ->where('user_group','pelajar')
           ->selectRaw('tahun, count(*) as count')
           ->groupBy('tahun')
           ->get();

@@ -79,7 +79,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+<<<<<<< HEAD
       //dd($data);
+=======
+
+>>>>>>> 91b987ee06d8c16f476c4438713d12a057cb86ce
       $user = User::create([
           'name' => $data['name'],
           'matric_no' => $data['matric_no'],
@@ -89,7 +93,6 @@ class RegisterController extends Controller
           'alasan' => null,
           'kelab_baru' => null,
       ]);
-
       $user->profile()->create([
       'user_id' => $user->id,
       'nama_penuh' => null,
@@ -98,8 +101,6 @@ class RegisterController extends Controller
       'kursus_id' => null,
       'no_tel' => null,
       'picture' => '/images/img/default_picture.png',
-
-      //column seterusnya pada profiles table
   ]);
 
   return $user;

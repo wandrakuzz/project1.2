@@ -21,7 +21,7 @@
           <th>No Matrik</th>
           <th>Email</th>
           <th>Jantina</th>
-          <th>Kursus</th>
+          {{-- <th>Kursus</th> --}}
           <th>Tahun</th>
           <th>No Telefon</th>
         </tr>
@@ -35,7 +35,7 @@
           <td>{{ $senarai->matric_no }}</td>
           <td>{{ $senarai->email }}</td>
           <td>{{ $senarai->profile->gender}}</td>
-          <td>{{ $senarai->profile->kursus->name}}</td>
+          {{-- <td>{{ $senarai->profile->kursus->name}}</td> --}}
           <td>{{ $senarai->profile->tahun}}</td>
           <td>{{ $senarai->profile->no_tel}}</td>
         </tr>
